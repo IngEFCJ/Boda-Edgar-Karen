@@ -1,0 +1,20 @@
+<!-- bienvenida.component.html -->
+<div class="container">
+  <!-- Sobre animado -->
+  <div class="envelope" [ngClass]="{'opened': isOpened}">
+    <div class="flap">
+      <div class="message">
+        <p class="top-text">Te invito a mi boda</p>
+        <p class="bottom-text">Abre el sobre</p>
+      </div>
+    </div>
+    <div class="sticker" (mousedown)="startDrag($event)" [ngClass]="{'dragging': isDragging}">
+      <span>🎉</span>
+    </div>
+  </div>
+
+  <!-- Contenido completo que se revela después de abrir el sobre -->
+  <div class="content" *ngIf="isOpened">
+    <router-outlet></router-outlet> <!-- Aquí se muestra la página completa -->
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<!-- header.component.html -->
+<header class="header">
+  <div class="hamburger" (click)="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- Botón de bocina para controlar la música -->
+  <div class="audio-control" (click)="toggleMusic()">
+    <div class="speaker-icon" [ngClass]="{'active': isMusicOn}">
+      <i class="fa" [ngClass]="isMusicOn ? 'fa-volume-up' : 'fa-volume-off'"></i>
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <audio #audioPlayer loop>
+    <source src="assets/Tu de que vas - Franco De Vita.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <nav [ngClass]="{'open': menuOpen}">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#lugares">Lugares</a></li>
+      <li><a href="#itinerario">Itinerario</a></li>
+      <li><a href="#vestimenta">Vestimenta</a></li>
+      <li><a href="#mesa-de-regalo">Mesa de Regalo</a></li>
+      <li><a href="#avisos">Avisos</a></li>
+      <li><a href="#confirma-asistencia">Confirma Asistencia</a></li>
+    </ul>
+  </nav>
+</header>

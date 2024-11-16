@@ -1,0 +1,58 @@
+/* nosotros.component.css */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 50px; /* Espacio después del home */
+}
+
+.countdown-item {
+  text-align: center;
+  font-weight: bold;
+}
+
+.countdown-number {
+  font-size: 50px;
+  color: black; /* Número en color negro */
+  padding: 10px;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic; /* Cursiva para los números */
+  position: relative;
+  overflow: hidden; /* Para que el número no se salga del contenedor */
+}
+
+/* Aquí se aplica la animación cuando el número cambia */
+.countdown-item.change .countdown-number {
+  animation: move-up 1s ease-in-out;
+}
+
+.countdown-label {
+  color: #000; /* Etiquetas de texto en color negro */
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Animación para que el número suba y el nuevo entre desde abajo */
+@keyframes move-up {
+  0% {
+    transform: translateY(50px); /* El número empieza desplazado hacia abajo */
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0); /* El número aparece en su lugar */
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-50px); /* El número anterior sube y desaparece */
+    opacity: 0;
+  }
+}

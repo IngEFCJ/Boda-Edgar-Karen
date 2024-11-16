@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css o el archivo global de estilos */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Asegura que la imagen de fondo ocupe toda la altura de la ventana */
+  background: url('assets/FondoTulipanes.webp') no-repeat center center fixed; /* La imagen de fondo */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-attachment: fixed; /* Hace que la imagen permanezca fija cuando se haga scroll */
+  color: white; /* Cambia el color del texto si es necesario */
+}

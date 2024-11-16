@@ -1,0 +1,107 @@
+/* Estilo del contenedor */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Fondo claro para centrar la atención en el sobre */
+}
+
+/* Estilo del sobre */
+.envelope {
+  width: 300px;
+  height: 200px;
+  background-color: #333; /* Color oscuro para el sobre */
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 5s ease, opacity 1s ease; /* Animación de apertura y desaparición */
+}
+
+  /* Líneas cruzadas del sobre */
+  .envelope::before,
+  .envelope::after {
+    content: '';
+    position: absolute;
+    background-color: #d32f2f; /* Color de las líneas cruzadas */
+    height: 5px;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .envelope::before {
+    transform: translate(-50%, -50%) rotate(45deg); /* Línea diagonal hacia arriba */
+  }
+
+  .envelope::after {
+    transform: translate(-50%, -50%) rotate(-45deg); /* Línea diagonal hacia abajo */
+  }
+
+  /* Animación de apertura del sobre */
+  .envelope.opened {
+    transform: scale(1.2) rotate(180deg); /* Expande y rota el sobre */
+    opacity: 0; /* Hace que el sobre desaparezca */
+  }
+
+/* Parte interior del sobre */
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  background-color: white; /* Color blanco del interior */
+  border-radius: 10px;
+  transition: top 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Sticker rojo en el centro del sobre */
+.sticker {
+  width: 60px;
+  height: 60px;
+  background-color: #ff0000; /* Sticker rojo */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+  .sticker.dragging {
+    opacity: 0.6;
+  }
+
+.content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Mostrar el contenido después de que el sobre se abre */
+.envelope.opened .content {
+  display: block;
+  transition: transform 1s ease;
+  transform: scale(1);
+}

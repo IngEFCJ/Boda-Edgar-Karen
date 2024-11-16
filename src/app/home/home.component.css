@@ -1,0 +1,37 @@
+/* home.component.css */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* La imagen ocupa la mitad de la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* La imagen cubre el área pero mantiene la relación de aspecto */
+  position: absolute; /* Para que la imagen quede en el fondo */
+  top: 0;
+  left: 0;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%; /* Centra el texto verticalmente */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición del texto exactamente en el centro */
+  text-align: center;
+  color: white; /* Puedes cambiar el color del texto */
+  font-family: 'Arial', sans-serif;
+}
+
+  .text-overlay h1 {
+    font-size: 48px; /* Tamaño del título */
+    margin-bottom: 20px;
+  }
+
+  .text-overlay p {
+    font-size: 24px; /* Tamaño del párrafo */
+  }
