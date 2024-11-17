@@ -1,8 +1,9 @@
 // Importar las dependencias necesarias de Angular
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';  // Asegúrate de importar CommonModule
+
 
 // Importar todos los componentes
 import { AppComponent } from './app.component';
@@ -39,9 +40,10 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,  // Necesario para la aplicación Angular
     AppRoutingModule,  // El módulo de enrutamiento
-    RouterModule.forRoot([]),  // El enrutamiento debe ser configurado
+    RouterModule.forRoot([]),
     CommonModule  // Necesario para ngClass y otras directivas comunes
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Agrega CUSTOM_ELEMENTS_SCHEMA aquí
   providers: [],
   bootstrap: [AppComponent]  // Asegúrate de que AppComponent esté aquí
 })

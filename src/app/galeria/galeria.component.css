@@ -1,0 +1,16 @@
+/* galeria.component.css */
+.galeria-container {
+  width: 100%;
+  height: 400px; /* Ajusta la altura según tus necesidades */
+}
+
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que las imágenes se ajusten bien */
+}
