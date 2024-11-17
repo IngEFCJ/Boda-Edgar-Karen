@@ -1,11 +1,16 @@
 <!-- header.component.html -->
 <header class="header">
   <div class="hamburger" (click)="toggleMenu()">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+    <div class="line" [class.open]="menuOpen"></div>
+    <div class="line" [class.open]="menuOpen"></div>
+    <div class="line" [class.open]="menuOpen"></div>
   </div>
-
+  <!-- Menú desplegable -->
+  <div class="menu" [class.open]="menuOpen">
+    <a routerLink="#home" (click)="closeMenu()">Home</a>
+    <a routerLink="#nosotros" (click)="closeMenu()">Nosotros</a>
+    <!-- Agrega más enlaces si es necesario -->
+  </div>
   <!-- Botón de bocina para controlar la música -->
   <div class="audio-control" (click)="toggleMusic()">
     <div class="speaker-icon" [ngClass]="{'active': isMusicOn}">

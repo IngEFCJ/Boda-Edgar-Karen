@@ -24,6 +24,11 @@ export class HeaderComponent implements OnInit {
     this.menuOpen = !this.menuOpen;
   }
 
+  // Método para cerrar el menú al hacer clic en cualquier enlace
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
   toggleMusic() {
     this.isMusicOn = !this.isMusicOn;
 

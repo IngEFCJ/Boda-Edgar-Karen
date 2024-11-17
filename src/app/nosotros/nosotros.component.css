@@ -6,6 +6,7 @@
   gap: 20px;
   font-family: 'Arial', sans-serif;
   margin-top: 50px; /* Espacio después del home */
+  flex-wrap: wrap; /* Permite que los números se acomoden mejor en pantallas pequeñas */
 }
 
 .countdown-item {
@@ -14,18 +15,19 @@
 }
 
 .countdown-number {
-  font-size: 50px;
+  font-size: 3vw; /* Tamaño más pequeño para los números */
   color: black; /* Número en color negro */
   padding: 10px;
   border-radius: 10px;
-  width: 80px;
-  height: 80px;
+  width: 60px; /* Ajuste para el tamaño más pequeño */
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-style: italic; /* Cursiva para los números */
   position: relative;
   overflow: hidden; /* Para que el número no se salga del contenedor */
+  background: transparent; /* Fondo transparente */
 }
 
 /* Aquí se aplica la animación cuando el número cambia */
@@ -35,11 +37,10 @@
 
 .countdown-label {
   color: #000; /* Etiquetas de texto en color negro */
-  font-size: 18px;
+  font-size: 1.5vw; /* Adaptamos el tamaño de la etiqueta según el tamaño de la pantalla */
   margin-top: 10px;
 }
 
-/* Animación para que el número suba y el nuevo entre desde abajo */
 @keyframes move-up {
   0% {
     transform: translateY(50px); /* El número empieza desplazado hacia abajo */
@@ -54,5 +55,30 @@
   100% {
     transform: translateY(-50px); /* El número anterior sube y desaparece */
     opacity: 0;
+  }
+}
+
+/* Responsividad: ajustes para pantallas más pequeñas */
+@media (max-width: 600px) {
+  .countdown-number {
+    font-size: 5vw; /* Ajuste aún mayor para pantallas pequeñas */
+    width: 50px;
+    height: 50px;
+  }
+
+  .countdown-label {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .countdown-number {
+    font-size: 5vw; /* Ajuste aún mayor para pantallas más pequeñas */
+    width: 40px;
+    height: 40px;
+  }
+
+  .countdown-label {
+    font-size: 5vw;
   }
 }
