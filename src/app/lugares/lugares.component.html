@@ -1,1 +1,22 @@
-<p>lugares works!</p>
+<!-- lugares.component.html -->
+<div class="lugares-container">
+  <!-- Iglesia -->
+  <div class="lugar">
+    <img src="assets/TemploAnimado.png" alt="Iglesia"style="width: 150px; height: auto;" class="lugar-imagen" />
+    <div class="direccion">
+      <h3>Santuario San Nicolás De Bari</h3>
+      <p>Dirección: Cáncer # 4190-A Col 45120, Juan Manuel Vallarta, 45120 Zapopan, Jal.</p>
+      <button (click)="openGoogleMaps('Santuario San Nicolás De Bari, Cáncer # 4190-A Col 45120, Juan Manuel Vallarta, 45120 Zapopan, Jal.')">Ver en Maps</button>
+    </div>
+  </div>
+
+  <!-- Salón de eventos -->
+  <div class="lugar">
+    <img src="assets/salon-de-eventos.png" alt="Salón de Eventos" style="width: 150px; height: auto;" class="lugar-imagen" />
+    <div class="direccion">
+      <h3>Salón de Eventos Campo Mágico</h3>
+      <p>Dirección: Ojo de agua 102, Unión Nextipac, 45220 Zapopan, Jal.</p>
+      <button (click)="openGoogleMaps('Campo Mágico, Ojo de agua 102, Unión Nextipac, 45220 Zapopan, Jal.')">Ver en Maps</button>
+    </div>
+  </div>
+</div>
