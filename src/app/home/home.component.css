@@ -35,3 +35,33 @@
   .text-overlay p {
     font-size: 24px; /* Tamaño del párrafo */
   }
+
+.text-Center {
+  position: absolute;
+  top: 51%; /* Centra el texto verticalmente */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición del texto exactamente en el centro */
+  text-align: center;
+  color: black; /* Puedes cambiar el color del texto */
+}
+
+  .text-Center h1 {
+    font-size: 48px; /* Tamaño del título */
+    margin-bottom: 20px;
+  }
+
+  .text-Center p {
+    font-size: 24px; /* Tamaño del párrafo */
+  }
+/* Para el título */
+.titulo-boda {
+  font-family: 'Black Chancery', serif;
+  font-size: 36px;
+  font-style: italic; /* Para hacerla más elegante */
+}
+
+/* Para párrafos */
+.descripcion {
+  font-family: 'Bookman Old Style', serif;
+  font-size: 18px;
+}

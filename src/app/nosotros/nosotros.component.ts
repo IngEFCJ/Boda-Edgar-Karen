@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nosotros.component.css']
 })
 export class NosotrosComponent implements OnInit {
-  weddingDate = new Date('2026-10-24T12:00:00');  // Cambia esta fecha por la fecha de tu boda
+  weddingDate = new Date('2026-06-06T12:00:00');  // Cambia esta fecha por la fecha de tu boda
 
   days: number = 0;
   hours: number = 0;
