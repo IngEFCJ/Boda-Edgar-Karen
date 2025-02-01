@@ -6,5 +6,6 @@
     <ShouldRunBuildScript>false</ShouldRunBuildScript>
     <!-- Folder where production build objects will be placed -->
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\Bodas\</PublishAssetsDirectory>
+    <PackageJsonDirectory>C:\Users\edgar\Documents\Boda-Edgar-Y-Karen</PackageJsonDirectory>
   </PropertyGroup>
 </Project>
