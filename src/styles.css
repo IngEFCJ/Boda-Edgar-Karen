@@ -16,10 +16,10 @@ body {
 
 @font-face {
   font-family: 'Black Chancery';
-  src: url('assets/fonts/BLKCHCRY.TTF') format('truetype');
+  src: url('../src/assets/fonts/BLKCHCRY.TTF') format('truetype');
 }
 
 @font-face {
   font-family: 'Bookman Old Style';
-  src: url('assets/fonts/BOOKOS.TTF') format('truetype');
+  src: url('../src/assets/fonts/BOOKOS.TTF') format('truetype');
 }
