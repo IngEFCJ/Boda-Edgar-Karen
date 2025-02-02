@@ -14,12 +14,4 @@ body {
   height: 100%;
 }
 
-@font-face {
-  font-family: 'Black Chancery';
-  src: url('../src/assets/fonts/BLKCHCRY.TTF') format('truetype');
-}
 
-@font-face {
-  font-family: 'Bookman Old Style';
-  src: url('../src/assets/fonts/BOOKOS.TTF') format('truetype');
-}
