@@ -7,6 +7,7 @@ body {
   background-size: cover; 
   background-position: center; /* Centra la imagen en la pantalla */
   background-attachment: fixed; /* La imagen permanece fija al hacer scroll */
+  font-family: 'Black Chancery', cursive;
 }
 
 .content {
@@ -14,4 +15,7 @@ body {
   height: 100%;
 }
 
+.another-class {
+  font-family: 'Bookman Old Style', serif;
+}
 

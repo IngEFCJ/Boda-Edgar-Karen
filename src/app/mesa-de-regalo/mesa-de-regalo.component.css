@@ -1,0 +1,47 @@
+/* mesa-de-regalo.component.css */
+.mesa-de-regalo-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .image-container {
+    margin-bottom: 20px;
+  }
+  
+  .mesa-de-regalo-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Tamaño máximo de la imagen */
+    border-radius: 8px;
+  }
+  
+  .content {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  button {
+    background-color: #ff9900;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e68a00;
+  }
+  

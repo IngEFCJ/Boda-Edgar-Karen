@@ -2,15 +2,18 @@
 .galeria-container {
   width: 100%;
   height: 400px; /* Ajusta la altura según tus necesidades */
+  /* Hacemos que el contenedor de la galería sea totalmente responsivo */
 }
 
 swiper-container {
   width: 100%;
-  height: 100%;
+  height: 100%; /* El swiper ocupará todo el alto del contenedor */
 }
 
 swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que las imágenes se ajusten bien */
+  width: 100%;  /* Hacemos que las imágenes ocupen todo el ancho */
+  height: 100%; /* Asegura que las imágenes ocupen el 100% del alto */
+  object-fit: cover; /* Esto hace que las imágenes se ajusten correctamente, recortándolas si es necesario */
 }
+
+/* Puedes agregar más estilos para mejorar la apariencia, como bordes, sombras, etc. */
