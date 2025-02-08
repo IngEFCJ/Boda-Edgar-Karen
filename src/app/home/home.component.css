@@ -23,7 +23,7 @@
   left: 50%; /* Centra el texto horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta la posición del texto exactamente en el centro */
   text-align: center;
-  color: white; /* Puedes cambiar el color del texto */
+  color: black; /* Puedes cambiar el color del texto */
   font-family: 'Arial', sans-serif;
 }
 

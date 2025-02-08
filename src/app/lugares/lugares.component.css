@@ -49,3 +49,56 @@ button {
   button:hover {
     background-color: #444;
   }
+
+  /* CSS con animaciones para los efectos */
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Animación de entrada desde la derecha */
+.text-from-right {
+  opacity: 0;
+  transform: translateX(100%); /* Empuja el texto hacia la derecha */
+  animation: slideFromRight 1s forwards; /* Aplica la animación */
+}
+
+@keyframes slideFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Regresa a la posición original */
+  }
+}
+
+/* Animación de entrada desde la izquierda */
+.text-from-left {
+  opacity: 0;
+  transform: translateX(-100%); /* Empuja el texto hacia la izquierda */
+  animation: slideFromLeft 1s forwards; /* Aplica la animación */
+  animation-delay: 0.5s; /* Retarda el inicio de la animación */
+}
+
+@keyframes slideFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Regresa a la posición original */
+  }
+}
+
+/* Animación de entrada desde abajo */
+.text-from-bottom {
+  opacity: 0;
+  transform: translateY(100%); /* Empuja el texto hacia abajo */
+  animation: slideFromBottom 1s forwards; /* Aplica la animación */
+  animation-delay: 1s; /* Retarda el inicio de la animación */
+}
+
+@keyframes slideFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Regresa a la posición original */
+  }
+}
