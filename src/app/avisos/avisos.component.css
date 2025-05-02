@@ -1,0 +1,27 @@
+.avisos {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+.avisos h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.avisos ul {
+  list-style: none;
+  padding: 0;
+}
+.avisos li {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.avisos strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #000;
+}

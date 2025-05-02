@@ -1,0 +1,72 @@
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 2px dashed #000;
+  background: none;
+}
+.event {
+  position: relative;
+  width: 50%;
+  margin: 1.5rem 0;
+}
+.event.left {
+  left: 0;
+  text-align: left;
+}
+.event.right {
+  left: 50%;
+  text-align: right;
+}
+.event .label {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  background: transparent;
+}
+.event img {
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+  height: auto;
+}
+.event.left::after {
+  content: '❤';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  color: #e74c3c;
+  font-size: 20px;
+}
+.event.right::after {
+  content: '❤';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  color: #e74c3c;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 1rem;
+  }
+  .event {
+    width: 45%;
+    margin: 1.5rem 0;
+  }
+  .event.left { left: 0; }
+  .event.right { left: 50%; }
+  .event.left::after { right: -15px; left: auto; }
+  .event.right::after { left: -15px; right: auto; }
+}
