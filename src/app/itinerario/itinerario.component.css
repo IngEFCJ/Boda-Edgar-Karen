@@ -58,15 +58,42 @@
   font-size: 20px;
 }
 @media (max-width: 768px) {
-  .timeline {
-    padding: 0 1rem;
-  }
+  /* 1) Cada evento ocupa 100% y es un flex container centrado */
   .event {
-    width: 45%;
-    margin: 1.5rem 0;
+    position: relative;
+    width: 100% !important;
+    left: 0 !important;
+    display: flex;
+    align-items: center;
   }
-  .event.left { left: 0; }
-  .event.right { left: 50%; }
-  .event.left::after { right: -15px; left: auto; }
-  .event.right::after { left: -15px; right: auto; }
+
+  /* 2) Los de la izquierda van a la derecha del corazón, y viceversa */
+  .event.left {
+    justify-content: flex-end;
+  }
+  .event.right {
+    justify-content: flex-start;
+  }
+
+  /* 3) Etiqueta e imagen con márgenes mínimos */
+  .event .label {
+    order: 1;
+    margin: 0 0.5rem;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  .event img {
+    order: 2;
+    width: 40px;
+    height: auto;
+    margin: 0 0.5rem;
+  }
+
+  /* 4) Siempre centro el corazón sobre la línea */
+  .event::after {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
 }

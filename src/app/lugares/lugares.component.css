@@ -62,43 +62,49 @@ button {
 /* Animación de entrada desde la derecha */
 .text-from-right {
   opacity: 0;
-  transform: translateX(100%); /* Empuja el texto hacia la derecha */
-  animation: slideFromRight 1s forwards; /* Aplica la animación */
+  transform: translateX(100%);
+}
+.text-from-right.animate {
+  animation: slideFromRight 1s forwards;
 }
 
 @keyframes slideFromRight {
   to {
     opacity: 1;
-    transform: translateX(0); /* Regresa a la posición original */
+    transform: translateX(0);
   }
 }
 
 /* Animación de entrada desde la izquierda */
 .text-from-left {
   opacity: 0;
-  transform: translateX(-100%); /* Empuja el texto hacia la izquierda */
-  animation: slideFromLeft 1s forwards; /* Aplica la animación */
-  animation-delay: 0.5s; /* Retarda el inicio de la animación */
+  transform: translateX(-100%);
+}
+.text-from-left.animate {
+  animation: slideFromLeft 1s forwards;
+  animation-delay: 0.5s;
 }
 
 @keyframes slideFromLeft {
   to {
     opacity: 1;
-    transform: translateX(0); /* Regresa a la posición original */
+    transform: translateX(0);
   }
 }
 
 /* Animación de entrada desde abajo */
 .text-from-bottom {
   opacity: 0;
-  transform: translateY(100%); /* Empuja el texto hacia abajo */
-  animation: slideFromBottom 1s forwards; /* Aplica la animación */
-  animation-delay: 1s; /* Retarda el inicio de la animación */
+  transform: translateY(100%);
+}
+.text-from-bottom.animate {
+  animation: slideFromBottom 1s forwards;
+  animation-delay: 1s;
 }
 
 @keyframes slideFromBottom {
   to {
     opacity: 1;
-    transform: translateY(0); /* Regresa a la posición original */
+    transform: translateY(0);
   }
 }
