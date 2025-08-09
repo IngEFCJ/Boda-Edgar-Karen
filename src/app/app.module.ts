@@ -39,7 +39,7 @@ import { register } from 'swiper/element/bundle';
     BrowserModule,  // Necesario para la aplicación Angular
     AppRoutingModule,  // El módulo de enrutamiento
     RouterModule.forRoot([]),
-    CommonModule,  // Necesario para ngClass y otras directivas comunes
+    CommonModule  // Necesario para ngClass y otras directivas comunes
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Agrega CUSTOM_ELEMENTS_SCHEMA aquí
   providers: [],

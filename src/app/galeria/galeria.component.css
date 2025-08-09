@@ -2,18 +2,24 @@
 .galeria-container {
   width: 100%;
   height: 400px; /* Ajusta la altura según tus necesidades */
-  /* Hacemos que el contenedor de la galería sea totalmente responsivo */
 }
 
+/* Asegurar que el custom element sea de bloque y reconozca gestos táctiles */
 swiper-container {
+  display: block;
   width: 100%;
-  height: 100%; /* El swiper ocupará todo el alto del contenedor */
+  height: 100%;
+  touch-action: pan-y;            /* Permite desplazamiento vertical de la página y swipe horizontal */
+  overscroll-behavior: contain;   /* Evita rebote que interfiere con el swipe */
 }
 
 swiper-slide img {
-  width: 100%;  /* Hacemos que las imágenes ocupen todo el ancho */
-  height: 100%; /* Asegura que las imágenes ocupen el 100% del alto */
-  object-fit: cover; /* Esto hace que las imágenes se ajusten correctamente, recortándolas si es necesario */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;   /* Evita arrastre de imagen en iOS/Safari */
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 /* Puedes agregar más estilos para mejorar la apariencia, como bordes, sombras, etc. */
