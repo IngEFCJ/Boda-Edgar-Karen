@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.128-alpha">
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/0.5.128-alpha">
   <PropertyGroup>
     <StartupCommand>npm start</StartupCommand>
     <JavaScriptTestFramework>Jasmine</JavaScriptTestFramework>
@@ -8,4 +8,7 @@
     <PublishAssetsDirectory>$(MSBuildProjectDirectory)\dist\Bodas\</PublishAssetsDirectory>
     <PackageJsonDirectory>C:\Users\edgar\Documents\Boda-Edgar-Y-Karen</PackageJsonDirectory>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="src\app\Services_tmp\" />
+  </ItemGroup>
 </Project>

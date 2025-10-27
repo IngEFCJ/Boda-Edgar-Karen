@@ -1,67 +1,66 @@
-/* home.component.css */
-.home-container {
+/* Contenedor del héroe */
+.home {
   position: relative;
+  min-height: 70vh; /* alto del bloque héroe */
+  display: grid;
+  place-items: end center;
+  background: transparent; /* el difuminado se funde en este color */
+  overflow: hidden;
+  --fade-start: 62%; /* dónde empieza el fade (ajusta 50–75%) */
+}
+
+/* La imagen ocupa el ancho y se desvanece abajo con mask-image */
+.hero-img {
   width: 100%;
-  height: 50vh; /* La imagen ocupa la mitad de la altura de la ventana */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center; /* ajusta a 'top center' si la cara queda muy abajo */
+  /* Difuminado: opaco → transparente hacia abajo */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) var(--fade-start), rgba(0,0,0,0) 70%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) var(--fade-start), rgba(0,0,0,0) 100%);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
-.home-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* La imagen cubre el área pero mantiene la relación de aspecto */
-  position: absolute; /* Para que la imagen quede en el fondo */
-  top: 0;
-  left: 0;
-}
-
-.text-overlay {
+/* Overlay de textos (opcional) */
+.overlay {
   position: absolute;
-  top: 50%; /* Centra el texto verticalmente */
-  left: 50%; /* Centra el texto horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta la posición del texto exactamente en el centro */
+  inset: auto 0 18px 0;
   text-align: center;
-  color: black; /* Puedes cambiar el color del texto */
-  font-family: 'Arial', sans-serif;
+  color: #2b2b2b;
+  padding: 0 16px;
 }
 
-  .text-overlay h1 {
-    font-size: 48px; /* Tamaño del título */
-    margin-bottom: 20px;
-  }
-
-  .text-overlay p {
-    font-size: 24px; /* Tamaño del párrafo */
-  }
-
-.text-Center {
-  position: absolute;
-  top: 51%; /* Centra el texto verticalmente */
-  left: 50%; /* Centra el texto horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta la posición del texto exactamente en el centro */
-  text-align: center;
-  color: black; /* Puedes cambiar el color del texto */
+.titulo {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  letter-spacing: .08em;
 }
 
-  .text-Center h1 {
-    font-size: 48px; /* Tamaño del título */
-    margin-bottom: 20px;
-  }
-
-  .text-Center p {
-    font-size: 24px; /* Tamaño del párrafo */
-  }
-/* Para el título */
-.titulo-boda {
-  font-family: 'Black Chancery', serif;
-  font-size: 36px;
-  font-style: italic; /* Para hacerla más elegante */
+.pareja {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-/* Para párrafos */
-.descripcion {
-  font-family: 'Bookman Old Style', serif;
-  font-size: 18px;
+.fecha {
+  margin: 6px 0 0;
+  font-size: 1.125rem;
+  letter-spacing: .06em;
+  font-weight: 600;
+}
+
+@media (min-width: 480px) {
+  .overlay {
+    inset: auto 0 28px 0;
+  }
+
+  .pareja {
+    font-size: 2.4rem;
+  }
+
+  .fecha {
+    font-size: 1.25rem;
+  }
 }

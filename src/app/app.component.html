@@ -1,16 +1,15 @@
 <!-- app.component.html -->
 <app-header></app-header>  <!-- Incluye el header -->
 <div class="content">
-  <section id="home">
-    <app-home></app-home> <!-- Home -->
-  </section>
+
+  <app-home></app-home>
 
   <section id="nosotros">
     <app-nosotros></app-nosotros> <!-- Nosotros con contador -->
   </section>
 
   <section id="galeria">
-    <app-galeria></app-galeria> <!-- Galería -->
+    <app-galeria [imagenes]="manifest?.galeria"></app-galeria>
   </section>
 
   <section id="lugares">
@@ -22,7 +21,7 @@
   </section>
 
   <section id="itinerario">
-    <app-itinerario></app-itinerario>
+    <app-itinerario [items]="manifest?.itinerario"></app-itinerario>
   </section>
 
   <section id="avisos">

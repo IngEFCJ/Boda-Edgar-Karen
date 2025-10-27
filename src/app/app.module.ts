@@ -14,7 +14,9 @@ import { AvisosComponent } from './avisos/avisos.component';
 import { ConfirmaAsistenciaComponent } from './confirma-asistencia/confirma-asistencia.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { HeaderComponent } from './header/header.component';  // Importar HeaderComponent
-
+import { HttpClientModule } from '@angular/common/http';
+import { BlobUrlPipe } from './shared/blob-url.pipe';
+import { BlobBgDirective } from './shared/blob-bg.directive';
 // Importar el módulo de rutas
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,9 +39,13 @@ import { register } from 'swiper/element/bundle';
   ],
   imports: [
     BrowserModule,  // Necesario para la aplicación Angular
+    HttpClientModule,
     AppRoutingModule,  // El módulo de enrutamiento
     RouterModule.forRoot([]),
-    CommonModule  // Necesario para ngClass y otras directivas comunes
+    CommonModule,  // Necesario para ngClass y otras directivas comunes
+     // Importa los standalone aquí para que estén disponibles en templates
+    BlobUrlPipe,
+    BlobBgDirective
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],  // Agrega CUSTOM_ELEMENTS_SCHEMA aquí
   providers: [],

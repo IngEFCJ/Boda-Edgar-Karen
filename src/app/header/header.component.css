@@ -1,17 +1,19 @@
-/* header.component.css */
+/* Contenedor del header: fijo, por encima de todo */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: transparent; /* Fondo transparente */
+  gap: .75rem;
+  padding: 10px 16px;
+  background-color: transparent; /* tu preferencia */
+  backdrop-filter: blur(6px); /* opcional: legibilidad sobre fondos claros/osc. */
   z-index: 1000;
 }
 
+/* Botón hamburguesa */
 .hamburger {
   cursor: pointer;
   display: flex;
@@ -19,112 +21,153 @@
   justify-content: space-between;
   width: 30px;
   height: 20px;
+  border: 0;
+  background: transparent;
+  z-index: 1001; /* por si hay overlays */
 }
 
   .hamburger .line {
     height: 3px;
-    background-color: black; /* Color negro para las líneas */
+    background-color: #111;
     border-radius: 5px;
+    transition: transform .2s, opacity .2s;
   }
 
-nav {
-  display: none; /* Ocultar el menú por defecto */
-  position: absolute;
-  top: 60px; /* Ajusta según sea necesario */
-  left: 0;
-  right: 0;
-  background-color: transparent; /* Fondo transparente */
-  padding: 10px;
-}
-
-  nav.open {
-    display: block; /* Mostrar el menú cuando se active */
-  }
-
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinea las opciones a la izquierda */
-  }
-
-    nav ul li {
-      padding: 10px 0;
-      text-align: center;
+    .hamburger .line.open:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
     }
 
-      nav ul li a {
-        color: black; /* Color negro para las letras */
-        text-decoration: none;
-        font-size: 18px;
-      }
+    .hamburger .line.open:nth-child(2) {
+      opacity: 0;
+    }
 
-        nav ul li a:hover {
-          color: #ffa500; /* Color al pasar el mouse */
-        }
+    .hamburger .line.open:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
-/* header.component.css */
-
-/* Estilos para la bocina y el control de música */
+/* Control de audio (a la derecha) */
 .audio-control {
+  margin-left: auto;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0;
+  background: transparent;
 }
 
 .speaker-icon {
-  font-size: 30px;
-  color: white;
+  font-size: 26px;
+  color: #111;
   position: relative;
 }
 
-  /* Efecto de las líneas cuando la música está activada */
-  .speaker-icon.active::after {
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    top: -5px;
-    left: 15px;
-    background-color: white;
-    border-radius: 50%;
-    animation: soundEffect 0.5s infinite ease-in-out;
+  .speaker-icon i {
+    font-size: 26px;
+    line-height: 1;
   }
 
+  .speaker-icon.active i {
+    color: #ffa500;
+  }
+
+  /* Efectito de “onda” cuando hay música */
+  .speaker-icon.active::after,
   .speaker-icon.active::before {
     content: '';
     position: absolute;
     width: 8px;
     height: 8px;
-    top: 5px;
-    left: 15px;
-    background-color: white;
+    background-color: #ffa500;
     border-radius: 50%;
-    animation: soundEffect 0.5s infinite ease-in-out;
+    animation: soundEffect .6s infinite ease-in-out;
+  }
+
+  .speaker-icon.active::after {
+    top: -6px;
+    left: 16px;
+  }
+
+  .speaker-icon.active::before {
+    top: 6px;
+    left: 16px;
   }
 
 @keyframes soundEffect {
   0% {
     transform: scale(1);
+    opacity: .8;
   }
 
   50% {
     transform: scale(1.5);
+    opacity: .5;
   }
 
   100% {
     transform: scale(1);
+    opacity: .8;
   }
 }
 
-/* Estilos para el icono de la bocina */
-.speaker-icon i {
-  font-size: 30px;
+/* MENÚ: panel que cae por encima del contenido */
+nav {
+  display: block; /* lo controlamos con .open para mostrar/ocultar */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 56px; /* debajo del header */
+  transform: translateY(-8px); /* fuera de vista */
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(255,255,255,.85); /* transparente/legible; ajusta a tu gusto */
+  backdrop-filter: blur(6px);
+  padding: 12px 16px;
+  z-index: 999;
+  transition: opacity .18s ease, transform .18s ease;
 }
 
-.speaker-icon.active i {
-  color: #ffa500; /* Color del icono cuando la música está activada */
+  nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  nav li {
+    padding: 0;
+  }
+
+  nav a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 6px 2px;
+    display: inline-block;
+  }
+
+    nav a:hover {
+      color: #ffa500;
+      text-decoration: none;
+    }
+
+/* Pequeño respiro para el contenido por el header fijo */
+:root {
+  --header-h: 56px;
+}
+
+@media (max-width:480px) {
+  :root {
+    --header-h: 56px;
+  }
 }

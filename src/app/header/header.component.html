@@ -1,41 +1,36 @@
 <!-- header.component.html -->
 <header class="header">
-  <div class="hamburger" (click)="toggleMenu()">
-    <div class="line" [class.open]="menuOpen"></div>
-    <div class="line" [class.open]="menuOpen"></div>
-    <div class="line" [class.open]="menuOpen"></div>
-  </div>
-  <!-- Menú desplegable -->
-  <!--<div class="menu" [class.open]="menuOpen">
-    <a routerLink="#home" (click)="closeMenu()">Home</a>
-    <a routerLink="#nosotros" (click)="closeMenu()">Nosotros</a>-->
-    <!-- Agrega más enlaces si es necesario -->
-  <!--</div>-->
-  <!-- Botón de bocina para controlar la música -->
-  <div class="audio-control" (click)="toggleMusic()">
+  <!-- Botón hamburguesa -->
+  <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Abrir/cerrar menú">
+    <span class="line" [class.open]="menuOpen"></span>
+    <span class="line" [class.open]="menuOpen"></span>
+    <span class="line" [class.open]="menuOpen"></span>
+  </button>
+
+
+
+  <!-- Control de audio -->
+  <button class="audio-control" type="button" (click)="toggleMusic()" aria-label="Música">
     <div class="speaker-icon" [ngClass]="{'active': isMusicOn}">
       <i class="fa" [ngClass]="isMusicOn ? 'fa-volume-up' : 'fa-volume-off'"></i>
     </div>
-  </div>
+  </button>
 
   <!-- Reproductor de audio -->
-  <audio #audioPlayer loop>
-    <source src="assets/Tu de que vas - Franco De Vita.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <audio #audioPlayer preload="auto"></audio>
 
-
+  <!-- Menú -->
   <nav [ngClass]="{'open': menuOpen}">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#galeria">Galería</a></li>
-      <li><a href="#lugares">Lugares</a></li>
-      <li><a href="#itinerario">Itinerario</a></li>
-      <li><a href="#vestimenta">Vestimenta</a></li>
-      <li><a href="#mesa-de-regalo">Mesa de Regalo</a></li>
-      <li><a href="#avisos">Avisos</a></li>
-      <li><a href="#confirma-asistencia">Confirma Asistencia</a></li>
+      <li><a href="#home" (click)="closeMenu()">Home</a></li>
+      <li><a href="#nosotros" (click)="closeMenu()">Nosotros</a></li>
+      <li><a href="#galeria" (click)="closeMenu()">Galería</a></li>
+      <li><a href="#lugares" (click)="closeMenu()">Lugares</a></li>
+      <li><a href="#itinerario" (click)="closeMenu()">Itinerario</a></li>
+      <li><a href="#vestimenta" (click)="closeMenu()">Vestimenta</a></li>
+      <li><a href="#mesa-de-regalo" (click)="closeMenu()">Mesa de Regalo</a></li>
+      <li><a href="#avisos" (click)="closeMenu()">Avisos</a></li>
+      <li><a href="#confirma-asistencia" (click)="closeMenu()">Confirma Asistencia</a></li>
     </ul>
   </nav>
 </header>

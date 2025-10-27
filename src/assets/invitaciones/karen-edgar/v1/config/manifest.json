@@ -1,0 +1,78 @@
+{
+  "hero": { "bg": "images/backgrounds/Fondo_Liso_Elegante_Minimalista.png" },
+  "footer": { "logo": "images/logos/Foto2.jpeg" },
+  "itinerario": [
+    "images/itinerario/recepcion.png",
+    "images/itinerario/comida.png",
+    "images/itinerario/brindis.png",
+    "images/itinerario/baile.png",
+    "images/itinerario/despedida.png"
+  ],
+  "galeria": [
+    "images/galeria/Foto1.jpeg",
+    "images/galeria/Foto2.jpeg",
+    "images/galeria/Foto3.jpeg"
+  ],
+    "itinerario": [
+      {
+        "label": "Recepción",
+        "icono": "images/itinerario/recepcion.png",
+        "hora": "14:00"
+      },
+      {
+        "label": "Ceremonia",
+        "icono": "images/itinerario/ceremonia.png",
+        "hora": "14:30"
+      },
+      {
+        "label": "Comida",
+        "icono": "images/itinerario/comida.png",
+        "hora": "15:30"
+      },
+      {
+        "label": "Brindis",
+        "icono": "images/itinerario/brindis.png",
+        "hora": "17:00"
+      },
+      {
+        "label": "Baile",
+        "icono": "images/itinerario/baile.png",
+        "hora": "18:00"
+      },
+      {
+        "label": "Despedida",
+        "icono": "images/itinerario/despedida.png",
+        "hora": "23:00"
+      }
+    ],
+  "lugares": [
+    {
+      "titulo": "Parroquia San Juan Pablo II",
+      "direccion": "P.º de la Reina 2, Villa California, 45640 San Agustín, Jal.",
+      "icono": "images/lugares/templo.png",
+      "mapsQuery": "Parroquia San Juan Pablo II San Agustín Jalisco"
+    },
+    {
+      "titulo": "Bosque by ALOFA",
+      "direccion": "Av. Adolfo López Mateos Sur 8009, 45645 Tlajomulco de Zúñiga, Jal.",
+      "icono": "images/lugares/salon.png",
+      "mapsQuery": "Bosque by ALOFA Tlajomulco"
+    }
+  ],
+  "mesaDeRegalos": {
+    "titulo": "Mesa de Regalos",
+    "descripcion": "Haz tus compras para nuestra boda a través de nuestra mesa de regalos en Amazon.",
+    "imagen": "images/mesa-de-regalos/MesaDeRegalos.png",
+    "link": "https://www.amazon.com.mx/wedding/registry/29VZ6AKD82R3P"
+  },
+
+  "audio": { "track": "audio/Tu de que vas - Franco De Vita.mp3" },
+  "textos": {
+    "titulo": "Nuestra Boda",
+    "pareja": "Edgar & Karen",
+    "fecha": "25/Octubre/2026 2:00pm"
+  }
+}
+
+
+

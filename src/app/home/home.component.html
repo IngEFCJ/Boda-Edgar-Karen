@@ -1,10 +1,12 @@
-<div id="home" class="home-container">
-  <img src="assets/ManosAnillo.jpeg" alt="Imagen de fondo" class="home-image">
-  <div class="text-overlay">
-    <h4 class="titulo-boda">Nuestra Boda</h4>
-    <h2 class="descripcion">Edgar & Karen</h2>
-    <h2 class="descripcion">25/Octubre/2026 2:00pm</h2>
+<section id="home" class="home">
+  <img class="hero-img"
+       [src]="heroSrc"
+       alt="Foto de portada"
+       (error)="imgFallback($event)">
+
+  <div class="overlay">
+    <h4 class="titulo">¡El gran día se acerca!</h4>
+    <h2 class="pareja">Edgar & Karen</h2>
+    <h3 class="fecha">25 · 10 · 2026 · 2:00 pm</h3>
   </div>
-</div>
-
-
+</section>

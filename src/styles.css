@@ -2,15 +2,24 @@
 @import "~swiper/css/navigation";
 @import "~swiper/css/pagination";
 /* app.component.css */
+:root {
+  --app-bg: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url('assets/Floral.jpg'); /* Asegúrate de tener la ruta correcta */
-  background-size: cover; 
+  background-image: var(--app-bg); /* Asegúrate de tener la ruta correcta */
+  background-size: cover;
   background-position: center; /* Centra la imagen en la pantalla */
   background-attachment: fixed; /* La imagen permanece fija al hacer scroll */
   font-family: 'Black Chancery', cursive;
+}
+
+.home-container section,
+.hero-bg {
+  pointer-events: none;
 }
 
 .content {

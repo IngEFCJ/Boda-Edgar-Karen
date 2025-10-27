@@ -1,12 +1,16 @@
-<!-- mesa-de-regalo.component.html -->
-<div class="mesa-de-regalo-container">
-    <div class="image-container">
-      <img src="assets/MesaDeRegalos.png" style="width: 150px; height: auto;" alt="Mesa de Regalos" class="mesa-de-regalo-image" />
-    </div>
-    <div class="content">
-      <h2>Mesa de Regalos</h2>
-      <p class="description">Haz tus compras para nuestra boda a través de nuestra mesa de regalos en Amazon.</p>
-      <button (click)="irAMesaDeRegalos()">Ver en Amazon</button>
-    </div>
+<div class="mesa-de-regalo-container" *ngIf="mesa$ | async as mesa">
+  <div class="image-container">
+    <img class="mesa-de-regalo-image"
+         [src]="assets.url(mesa.imagen)"
+         [alt]="mesa.titulo"
+         (error)="onImgError($event)" />
   </div>
-  
+
+  <div class="content">
+    <h2>{{ mesa.titulo }}</h2>
+    <p class="description">{{ mesa.descripcion }}</p>
+    <button type="button" (click)="irAMesaDeRegalos(mesa.link)">
+      Ver en Amazon
+    </button>
+  </div>
+</div>

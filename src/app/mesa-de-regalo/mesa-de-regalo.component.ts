@@ -1,15 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ManifestService } from '../services/manifest.service';
+import { AssetService } from '../services/asset.service';
+import { map, Observable } from 'rxjs';
+
+type MesaDeRegalos = {
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+  link: string;
+};
 
 @Component({
   selector: 'app-mesa-de-regalo',
   templateUrl: './mesa-de-regalo.component.html',
   styleUrls: ['./mesa-de-regalo.component.css']
 })
-export class MesaDeRegaloComponent {
+export class MesaDeRegaloComponent implements OnInit {
+  mesa$!: Observable<MesaDeRegalos | null>;
 
-  // Redirige al usuario a la mesa de regalos en Amazon
-  irAMesaDeRegalos() {
-    window.location.href = 'https://www.amazon.com/wedding/registry/N53CKEG5YIU9'; // Cambia esta URL a la de tu mesa de regalos
+  constructor(
+    private manifest: ManifestService,
+    public assets: AssetService
+  ) { }
+
+  ngOnInit(): void {
+    this.mesa$ = this.manifest.manifest$.pipe(
+      map((m: any) => m?.mesaDeRegalos ?? null)
+    );
   }
 
+  irAMesaDeRegalos(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  onImgError(e: Event): void {
+    const img = e.target as HTMLImageElement;
+    img.style.opacity = '0.5';
+    img.alt = 'Imagen no disponible';
+  }
 }

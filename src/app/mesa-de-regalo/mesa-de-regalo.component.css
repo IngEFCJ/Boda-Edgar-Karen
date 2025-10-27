@@ -1,8 +1,11 @@
 /* mesa-de-regalo.component.css */
 .mesa-de-regalo-container {
-    text-align: center;
-    padding: 20px;
-  }
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
   
   .image-container {
     margin-bottom: 20px;
@@ -44,4 +47,3 @@
   button:hover {
     background-color: #e68a00;
   }
-  

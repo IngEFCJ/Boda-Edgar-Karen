@@ -1,27 +1,23 @@
 <div class="timeline">
-  <div class="event left">
-    <div class="label">Recepción</div>
-    <img src="assets/itinerario-recepcion.png" alt="Recepción">
-  </div>
-  <div class="event right">
-    <div class="label">Ceremonia</div>
-    <img src="assets/itinerario-ceremonia.png" alt="Ceremonia">
-  </div>
-  <div class="event left">
-    <div class="label">Comida</div>
-    <img src="assets/itinerario-comida.png" alt="Comida">
-  </div>
-  <div class="event right">
-    <div class="label">Brindis</div>
-    <img src="assets/itinerario-brindis.png" alt="Brindis">
-  </div>
-  <div class="event left">
-    <div class="label">Baile</div>
-    <img src="assets/itinerario-baile.png" alt="Baile">
-  </div>
-  <div class="event right">
-    <div class="label">Despedida</div>
-    <img src="assets/itinerario-despedida.png" alt="Despedida">
+  <div class="event"
+       *ngFor="let ev of (eventos$ | async); index as i"
+       [class.left]="i % 2 === 0"
+       [class.right]="i % 2 !== 0">
+    <div class="text">
+      <div class="label">
+        {{ ev.label }} <span *ngIf="ev.hora">· {{ ev.hora }}</span>
+      </div>
+
+      <!-- Ícono ABAJO del texto -->
+      <div class="icon-row" *ngIf="ev.icono">
+        <img [src]="assets.url(ev.icono)"
+             [alt]="ev.label"
+             class="event-icon"
+             (error)="onImgError($event)" />
+      </div>
+    </div>
+
+    <!-- Punto/Corazón; deja tu implementación existente si ya la tienes -->
+    <div class="dot"></div>
   </div>
 </div>
-

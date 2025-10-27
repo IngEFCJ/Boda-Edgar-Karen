@@ -14,8 +14,12 @@ import { AvisosComponent } from './avisos/avisos.component';
 import { ConfirmaAsistenciaComponent } from './confirma-asistencia/confirma-asistencia.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { HeaderComponent } from './header/header.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  { path: '', component: AppComponent },             // soporta ?i=...
+  { path: 'i/:ns', component: AppComponent },        // soporta /i/karen-edgar/v1 (sin slashes)
+  { path: 'i/**', component: AppComponent }  ,        // soporta /i/karen-edgar/v1 (con slashes)
   { path: '', component: HomeComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'galeria', component: GaleriaComponent },

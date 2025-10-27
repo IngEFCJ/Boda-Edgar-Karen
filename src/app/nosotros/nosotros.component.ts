@@ -8,17 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class NosotrosComponent implements OnInit {
   weddingDate = new Date('2026-10-25T14:00:00');  // Cambia esta fecha por la fecha de tu boda
 
-  days: number = 0;
-  hours: number = 0;
-  minutes: number = 0;
-  seconds: number = 0;
+  days  = 0;
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
 
-  prevSeconds: number = 0;
-  prevMinutes: number = 0;
-  prevHours: number = 0;
-  prevDays: number = 0;
+  prevSeconds = 0;
+  prevMinutes = 0;
+  prevHours = 0;
+  prevDays = 0;
 
-  constructor() { }
 
   ngOnInit(): void {
     this.startCountdown();

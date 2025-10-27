@@ -1,25 +1,51 @@
-/* galeria.component.css */
+/* Alto del carrusel (ajusta a tu gusto) */
 .galeria-container {
   width: 100%;
-  height: 400px; /* Ajusta la altura según tus necesidades */
+  height: 420px;
 }
 
-/* Asegurar que el custom element sea de bloque y reconozca gestos táctiles */
 swiper-container {
   display: block;
   width: 100%;
   height: 100%;
-  touch-action: pan-y;            /* Permite desplazamiento vertical de la página y swipe horizontal */
-  overscroll-behavior: contain;   /* Evita rebote que interfiere con el swipe */
 }
 
-swiper-slide img {
+swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.galeria-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  -webkit-user-drag: none;   /* Evita arrastre de imagen en iOS/Safari */
-  user-select: none;
-  -webkit-touch-callout: none;
+  display: block;
+  /* ------- CONTROL DEL ÓVALO ------- */
+  /* Altura aproximada de cada “capucha” oval (ajusta a gusto) */
+  --cap-h: 180px; /* 90–140px según qué tan oval lo quieras */
+  /* Tamaño vertical de cada máscara (hacerlas >=50% para que se solapen) */
+  --cap-size: 70%; /* 58–70% suele ir bien */
+  /* Suavidad del fade: qué tan pronto empieza la transparencia */
+  --t1: 38%; /* arranque de transparencia */
+  --t2: 75%; /* zona ya opaca (#000) */
+  /* ---------- WEBKIT (Chrome/Edge/Safari/iOS) ---------- */
+  /* Dos radiales: una arriba y otra abajo; se SOLAPAN en el centro */
+  -webkit-mask: radial-gradient(120% var(--cap-h) at 50% 0, transparent 0 var(--t1), #000 var(--t2) 100%) top / 100% var(--cap-size) no-repeat, radial-gradient(120% var(--cap-h) at 50% 100%, transparent 0 var(--t1), #000 var(--t2) 100%) bottom / 100% var(--cap-size) no-repeat;
+  /* Indica que las máscaras se suman (evita la franja en medio) */
+  -webkit-mask-composite: source-over, source-over;
+  /* ---------- ESTÁNDAR (Firefox, etc.) ---------- */
+  mask: radial-gradient(120% var(--cap-h) at 50% 0, transparent 0 var(--t1), #000 var(--t2) 100%) top / 100% var(--cap-size) no-repeat, radial-gradient(120% var(--cap-h) at 50% 100%, transparent 0 var(--t1), #000 var(--t2) 50%) bottom / 100% var(--cap-size) no-repeat;
+  mask-composite: add; /* suma las capas */
 }
 
-/* Puedes agregar más estilos para mejorar la apariencia, como bordes, sombras, etc. */
+
+

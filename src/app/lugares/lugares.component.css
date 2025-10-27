@@ -2,22 +2,24 @@
 .lugares-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
   align-items: center;
 }
 
 .lugar {
-  width: 90%;
-  max-width: 500px;
+  width: 92%;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 12px;
 }
 
 .lugar-imagen {
-  width: 100%;
+  width: 150px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 .direccion {
@@ -26,23 +28,25 @@
 }
 
   .direccion h3 {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.25rem;
+    font-weight: 700;
     color: #333;
+    margin: 0 0 4px 0;
   }
 
   .direccion p {
-    font-size: 1em;
+    font-size: 1rem;
     color: #666;
+    margin: 0 0 8px 0;
   }
 
 button {
-  margin-top: 10px;
+  margin-top: 6px;
   padding: 10px 20px;
   background-color: #000;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -50,61 +54,5 @@ button {
     background-color: #444;
   }
 
-  /* CSS con animaciones para los efectos */
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
-/* Animación de entrada desde la derecha */
-.text-from-right {
-  opacity: 0;
-  transform: translateX(100%);
-}
-.text-from-right.animate {
-  animation: slideFromRight 1s forwards;
-}
-
-@keyframes slideFromRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animación de entrada desde la izquierda */
-.text-from-left {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-.text-from-left.animate {
-  animation: slideFromLeft 1s forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes slideFromLeft {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Animación de entrada desde abajo */
-.text-from-bottom {
-  opacity: 0;
-  transform: translateY(100%);
-}
-.text-from-bottom.animate {
-  animation: slideFromBottom 1s forwards;
-  animation-delay: 1s;
-}
-
-@keyframes slideFromBottom {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* Si quieres animar cada .lugar al entrar en viewport, puedes reutilizar tus keyframes
+   aplicando una clase .animate desde un IntersectionObserver (opcional). */

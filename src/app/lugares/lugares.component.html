@@ -1,29 +1,16 @@
-<!-- lugares.component.html -->
 <div class="lugares-container">
-  <!-- Iglesia -->
-  <div class="lugar">
-    <img src="assets/TemploAnimado.png" alt="Iglesia"style="width: 150px; height: auto;" class="lugar-imagen" />
+  <div class="lugar" *ngFor="let l of lugares$ | async">
+    <img class="lugar-imagen"
+         [src]="iconSrc(l)"
+         [alt]="l.titulo"
+         width="150"
+         height="150"
+         loading="lazy"
+         (error)="imgFallback($event)" />
     <div class="direccion">
-      <h3>Santuario San Nicolás De Bari</h3>
-      <p>Dirección: Cáncer # 4190-A Col 45120, Juan Manuel Vallarta, 45120 Zapopan, Jal.</p>
-      <button (click)="openGoogleMaps('Santuario San Nicolás De Bari, Cáncer # 4190-A Col 45120, Juan Manuel Vallarta, 45120 Zapopan, Jal.')">Ver en Maps</button>
-    </div>
-  </div>
-<!-- Ejemplo en el componente (puede ser en cualquier parte de tu aplicación) -->
-<div class="text-container">
-  <h2 class="text-from-right">Texto que sale desde la derecha Prueba</h2>
-  <h2 class="text-from-left">Texto que sale desde la izquierda Prueba</h2>
-  <h2 class="text-from-bottom">Texto que sale desde abajo Prueba</h2>
-</div>
-
-
-  <!-- Salón de eventos -->
-  <div class="lugar">
-    <img src="assets/salon-de-eventos.png" alt="Salón de Eventos" style="width: 150px; height: auto;" class="lugar-imagen" />
-    <div class="direccion">
-      <h3>Bosque By ALOFA</h3>
-      <p>Dirección: Av. Adolfo López Mateos Sur 8009, 45645 Tlajomulco de Zúñiga, Jal.</p>
-      <button (click)="openGoogleMaps('Bosque by ALOFA')">Ver en Maps</button>
+      <h3>{{ l.titulo }}</h3>
+      <p>Dirección: {{ l.direccion }}</p>
+      <button type="button" (click)="openGoogleMaps(l)">Ver en Maps</button>
     </div>
   </div>
 </div>
