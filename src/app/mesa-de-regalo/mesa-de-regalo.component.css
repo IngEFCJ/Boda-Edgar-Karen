@@ -14,7 +14,7 @@
   .mesa-de-regalo-image {
     width: 100%;
     height: auto;
-    max-width: 600px; /* Tamaño máximo de la imagen */
+    max-width: 150px; /* Tamaño máximo de la imagen */
     border-radius: 8px;
   }
   

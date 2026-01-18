@@ -3,6 +3,9 @@
     <img class="mesa-de-regalo-image"
          [src]="assets.url(mesa.imagen)"
          [alt]="mesa.titulo"
+         width="150"
+         height="150"
+         loading="lazy"
          (error)="onImgError($event)" />
   </div>
 

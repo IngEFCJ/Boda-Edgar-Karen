@@ -40,8 +40,8 @@
   height: auto;
 }
 .event.left::after {
-  content: '❤';
-  position: absolute;
+/*  content: '❤';
+*/  position: absolute;
   top: 50%;
   left: 100%;
   transform: translate(-50%, -50%);
@@ -49,8 +49,8 @@
   font-size: 20px;
 }
 .event.right::after {
-  content: '❤';
-  position: absolute;
+/*  content: '❤';
+*/  position: absolute;
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
