@@ -17,20 +17,11 @@ import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },             // soporta ?i=...
-  { path: 'i/:ns', component: AppComponent },        // soporta /i/karen-edgar/v1 (sin slashes)
-  { path: 'i/**', component: AppComponent }  ,        // soporta /i/karen-edgar/v1 (con slashes)
-  { path: '', component: HomeComponent },
-  { path: 'nosotros', component: NosotrosComponent },
-  { path: 'galeria', component: GaleriaComponent },
-  { path: 'lugares', component: LugaresComponent },
-  { path: 'itinerario', component: ItinerarioComponent },
-  { path: 'vestimenta', component: VestimentaComponent },
-  { path: 'mesa-de-regalo', component: MesaDeRegaloComponent },
-  { path: 'avisos', component: AvisosComponent },
-  { path: 'confirma-asistencia', component: ConfirmaAsistenciaComponent },
-  { path: 'bienvenida', component: BienvenidaComponent },
-  { path: 'header', component: HeaderComponent },  // Si necesitas una ruta para HeaderComponent, la puedes agregar
+  // Si usas i/:ns para el slug de assets, lo dejamos para que el Router no tire error 404
+  { path: 'i/:ns', component: HomeComponent },
+  { path: 'i/**', component: HomeComponent },
+  // Por defecto a nada, ya que AppComponent tiene todas las secciones hardcoded
+  { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({

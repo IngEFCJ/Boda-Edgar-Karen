@@ -1,1 +1,142 @@
-<p>confirma-asistencia works!</p>
+<!-- confirma-asistencia.component.html -->
+<div class="confirma-container">
+
+    <!-- Encabezado con nombre del invitado -->
+    <div class="confirma-header">
+        <h2 class="pareja">¡Hola, {{ data.invitation.displayName }}!</h2>
+        <p class="evento-info">{{ data.event.title }}</p>
+        <p class="evento-detalle">
+            <i class="fas fa-calendar-alt"></i> {{ formattedDate }}
+        </p>
+        <p class="evento-detalle">
+            <i class="fas fa-map-marker-alt"></i> {{ data.event.locationName }}
+        </p>
+        <p class="evento-detalle direccion">{{ data.event.address }}</p>
+    </div>
+
+    <!-- Contador de confirmados -->
+    <div class="confirma-counter">
+        <span class="counter-number">{{ data.invitation.confirmedCount }}</span>
+        <span class="counter-separator">/</span>
+        <span class="counter-number">{{ data.invitation.totalTickets }}</span>
+        <span class="counter-label">confirmados</span>
+    </div>
+
+    <!-- Mensaje de éxito -->
+    <div class="success-msg" *ngIf="confirmSuccess">
+        <i class="fas fa-check-circle"></i> ¡Confirmación exitosa!
+    </div>
+
+    <!-- Mensaje de error -->
+    <div class="error-msg" *ngIf="confirmError">
+        <i class="fas fa-exclamation-circle"></i> {{ confirmError }}
+    </div>
+
+    <!-- Tickets confirmados -->
+    <div class="tickets-section" *ngIf="confirmedTickets.length > 0">
+        <h3 class="section-title confirmed-title">
+            <i class="fas fa-check-circle"></i> Confirmados
+        </h3>
+        <div class="ticket-card confirmed" *ngFor="let t of confirmedTickets">
+            <div class="ticket-info">
+                <span class="ticket-icon">✅</span>
+                <span class="ticket-label">{{ t.label }}</span>
+            </div>
+            <span class="ticket-status status-confirmed">Confirmado</span>
+        </div>
+    </div>
+
+    <!-- Tickets pendientes -->
+    <div class="tickets-section" *ngIf="pendingTickets.length > 0">
+        <h3 class="section-title pending-title">
+            <i class="fas fa-clock"></i> Pendientes
+        </h3>
+
+        <!-- Seleccionar todos -->
+        <label class="select-all" *ngIf="pendingTickets.length > 1">
+            <input type="checkbox" (change)="toggleSelectAll($event)">
+            <span>Seleccionar todos</span>
+        </label>
+
+        <div class="ticket-card pending" *ngFor="let t of pendingTickets">
+            <label class="ticket-info clickable">
+                <input type="checkbox" [(ngModel)]="t.selected">
+                <span class="ticket-label">{{ t.label }}</span>
+            </label>
+            <span class="ticket-status status-pending">Pendiente</span>
+        </div>
+    </div>
+
+    <!-- Botón de acción principal -->
+    <div class="action-area">
+        <!-- Si hay pendientes → Confirmar -->
+        <button *ngIf="pendingTickets.length > 0" class="btn-primary" [disabled]="!hasSelectedTickets || confirming"
+            (click)="confirmSelected()">
+            <span *ngIf="!confirming">
+                <i class="fas fa-check"></i> Confirmar Seleccionados
+            </span>
+            <span *ngIf="confirming">
+                <i class="fas fa-spinner fa-spin"></i> Confirmando...
+            </span>
+        </button>
+
+        <!-- Botón Ver Boletos (habilitado si hay confirmados) -->
+        <div class="view-tickets-area" *ngIf="canViewTickets">
+            <p class="celebration" *ngIf="allConfirmed">🎉 ¡Todos confirmados! 🎉</p>
+            <button class="btn-secondary" (click)="openTicketModal()">
+                <i class="fas fa-ticket-alt"></i> Ver Boletos
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL DE BOLETOS QR -->
+<div class="qr-modal-overlay" *ngIf="showTicketModal" (click)="closeTicketModal()">
+    <div class="qr-modal-content" (click)="$event.stopPropagation()">
+        <button class="btn-close" (click)="closeTicketModal()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <h2 class="pareja">Tus Boletos</h2>
+
+        <!-- Loading -->
+        <div class="qr-loading" *ngIf="loadingQrs">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Generando tus códigos de acceso...</p>
+        </div>
+
+        <!-- Error -->
+        <div class="qr-error" *ngIf="qrError">
+            <i class="fas fa-exclamation-circle"></i>
+            <p>{{ qrError }}</p>
+        </div>
+
+        <!-- Carrusel de QRs -->
+        <div class="qr-carousel-container" *ngIf="!loadingQrs && !qrError && ticketQrs.length > 0">
+            <p class="carousel-hint">Desliza para ver todos tus boletos</p>
+
+            <swiper-container navigation="true" pagination="true" space-between="20" slides-per-view="1"
+                centered-slides="true">
+                <swiper-slide *ngFor="let qr of ticketQrs">
+                    <div class="qr-ticket-card">
+                        <div class="qr-ticket-header">
+                            <span class="qr-event-title">{{ data.event.title }}</span>
+                        </div>
+                        <div class="qr-image-wrapper">
+                            <img [src]="qr.qrDataUrl" [alt]="'QR ' + qr.label">
+                        </div>
+                        <div class="qr-ticket-footer">
+                            <span class="qr-ticket-label">{{ qr.label }}</span>
+                            <span class="qr-invitee-name">{{ data.invitation.displayName }}</span>
+                        </div>
+                    </div>
+                </swiper-slide>
+            </swiper-container>
+        </div>
+
+        <div class="qr-footer-note" *ngIf="!loadingQrs && !qrError">
+            <p>Muestra estos códigos al llegar al evento para registrar tu asistencia.</p>
+        </div>
+    </div>
+</div>

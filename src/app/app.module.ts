@@ -2,7 +2,8 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';  // Asegúrate de importar CommonModule
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { GaleriaComponent } from './galeria/galeria.component';
@@ -38,12 +39,11 @@ import { register } from 'swiper/element/bundle';
     HeaderComponent
   ],
   imports: [
-    BrowserModule,  // Necesario para la aplicación Angular
+    BrowserModule,
     HttpClientModule,
-    AppRoutingModule,  // El módulo de enrutamiento
-    RouterModule.forRoot([]),
-    CommonModule,  // Necesario para ngClass y otras directivas comunes
-     // Importa los standalone aquí para que estén disponibles en templates
+    FormsModule,
+    AppRoutingModule,
+    CommonModule,
     BlobUrlPipe,
     BlobBgDirective
   ],

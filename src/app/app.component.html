@@ -1,5 +1,6 @@
 <!-- app.component.html -->
-<app-header></app-header>  <!-- Incluye el header -->
+<app-header></app-header>
+
 <div class="content">
 
   <app-home></app-home>
@@ -28,6 +29,18 @@
     <app-avisos></app-avisos> <!-- Avisos -->
   </section>
 
-  <!-- Agrega más secciones aquí... -->
+  <!-- Sección de confirmación: solo si hay token válido -->
+  <section id="confirma-asistencia" *ngIf="invitationData">
+    <app-confirma-asistencia [data]="invitationData" [token]="token!" (invitationUpdated)="onInvitationUpdated()">
+    </app-confirma-asistencia>
+  </section>
+
+  <!-- Loading / Error si hay token pero aún no carga -->
+  <section *ngIf="token && loadingInvitation" class="loading-section">
+    <p class="pareja">Cargando tu invitación...</p>
+  </section>
+  <section *ngIf="token && invitationError" class="error-section">
+    <p class="pareja">{{ invitationError }}</p>
+  </section>
 
 </div>
