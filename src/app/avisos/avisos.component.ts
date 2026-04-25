@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 type Notice = {
   title: string;
   description: string;
+  image?: string;
 };
 
 type VisibleNotice = Notice & {
@@ -20,16 +21,17 @@ export class AvisosComponent {
 
   notices: Notice[] = [
     {
-      title: 'Evento libre de ninos',
-      description: 'Aunque amamos a sus pequenos, queremos evitar accidentes, hemos optado por una celebracion solo para adultos para nuestro gran dia.'
-    },
-    {
       title: 'Vestimenta',
-      description: 'Azul marino o azul noche, verde esmeralda o botella, borgona, vino o vinotinto.'
+      description: 'Azul marino o azul noche, verde esmeralda o botella, borgoña, vino o vinotinto.',
+      image: 'assets/invitaciones/karen-edgar/v1/images/logovestidotraje.png'
     },
     {
-      title: 'Hora de llegada',
-      description: 'Por favor, puntuales a las 5:00 PM.'
+      title: 'Evento libre de niños',
+      description: 'Aunque amamos a sus pequeños, queremos evitar accidentes, hemos optado por una celebración solo para adultos.'
+    },
+    {
+      title: 'Otro aviso',
+      description: 'Texto del aviso.'
     }
   ];
 
@@ -46,9 +48,21 @@ export class AvisosComponent {
     const nextIndex = this.getCircularIndex(this.selectedNoticeIndex + 1);
 
     return [
-      { ...this.notices[previousIndex], index: previousIndex, position: 'previous' },
-      { ...this.notices[this.selectedNoticeIndex], index: this.selectedNoticeIndex, position: 'active' },
-      { ...this.notices[nextIndex], index: nextIndex, position: 'next' }
+      {
+        ...this.notices[previousIndex],
+        index: previousIndex,
+        position: 'previous'
+      },
+      {
+        ...this.notices[this.selectedNoticeIndex],
+        index: this.selectedNoticeIndex,
+        position: 'active'
+      },
+      {
+        ...this.notices[nextIndex],
+        index: nextIndex,
+        position: 'next'
+      }
     ];
   }
 

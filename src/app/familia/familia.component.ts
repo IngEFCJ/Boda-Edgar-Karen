@@ -26,14 +26,18 @@ export class FamiliaComponent {
   godparentsGroups: FamilyGroup[] = [
     {
       title: 'Padrinos de Velación',
-      names: ['Por confirmar']
+      names: ['Rigoberto Romo Lopez ','Angeles Mora Sandoval']
     },
     {
       title: 'Padrinos de Anillos',
-      names: ['Por confirmar']
+      names: ['Jorge Barba Vázquez , Ana Lilia Agripino Flores']
     },
     {
       title: 'Padrinos de Lazo',
+      names: ['Por confirmar']
+    },
+    {
+      title: 'Padrinos de Arras',
       names: ['Por confirmar']
     }
   ];
