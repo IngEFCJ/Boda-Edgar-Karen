@@ -1,19 +1,40 @@
-<div class="avisos">
-  <h2>Avisos</h2>
-  <ul>
-    <li>
-      <strong>Evento libre de niños:</strong>
-      Aunque amamos a sus pequeños, queremos evitar accidentes, hemos optado por una celebración solo para adultos para nuestro gran día
-    </li>
-    <li>
-      <strong>Vestimenta:</strong>
-      Azul Marino / Azul Noche.
-      Verde Esmeralda / Botella.
-      Borgoña / Vino / Vinotinto.
-    </li>
-    <li>
-      <strong>Hora de llegada:</strong>
-      Por favor, punta­les a las 5:00 PM.
-    </li>
-  </ul>
-</div>
+<section class="notices-section" aria-labelledby="notices-title">
+  <h2 id="notices-title" class="notices-title">Avisos</h2>
+
+  <div class="notices-carousel">
+    <button
+      type="button"
+      class="notice-arrow"
+      aria-label="Ver aviso anterior"
+      (click)="previousNotice()">
+      &#8249;
+    </button>
+
+    <div class="notices-track" aria-live="polite">
+      <article
+        class="notice-card"
+        *ngFor="let notice of visibleNotices"
+        [class.notice-card-active]="notice.position === 'active'"
+        [class.notice-card-side]="notice.position !== 'active'"
+        (click)="selectNotice(notice.index)">
+        <h3 class="notice-title">{{ notice.title }}</h3>
+        <p class="notice-description">{{ notice.description }}</p>
+      </article>
+    </div>
+
+    <button
+      type="button"
+      class="notice-arrow"
+      aria-label="Ver siguiente aviso"
+      (click)="nextNotice()">
+      &#8250;
+    </button>
+  </div>
+
+  <div class="notice-dots" aria-hidden="true">
+    <span
+      *ngFor="let notice of notices; let i = index"
+      [class.active]="i === selectedNoticeIndex">
+    </span>
+  </div>
+</section>

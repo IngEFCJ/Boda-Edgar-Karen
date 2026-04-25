@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { FamiliaComponent } from './familia/familia.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { ItinerarioComponent } from './itinerario/itinerario.component';
 import { VestimentaComponent } from './vestimenta/vestimenta.component';
@@ -29,6 +30,7 @@ import { register } from 'swiper/element/bundle';
     HomeComponent,
     NosotrosComponent,
     GaleriaComponent,
+    FamiliaComponent,
     LugaresComponent,
     ItinerarioComponent,
     VestimentaComponent,
