@@ -2,19 +2,23 @@
   <swiper-container slides-per-view="1"
                     space-between="24"
                     loop="true"
-                    navigation="true"
+                    navigation="false"
                     pagination="true"
                     watch-overflow="false"
                     breakpoints='{"640":{"slidesPerView":1},"768":{"slidesPerView":2},"1024":{"slidesPerView":3}}'>
+
     <swiper-slide *ngFor="let src of resolved">
       <div class="galeria-frame">
-        <img class="photo" [src]="src" alt="Foto de galería" (error)="onImgError($event)" />
+        <img class="photo"
+             [src]="src"
+             alt="Foto de galería"
+             (error)="onImgError($event)" />
       </div>
     </swiper-slide>
+
   </swiper-container>
 </div>
 
 <ng-template #vacio>
-  <!-- opcional: placeholder mientras carga -->
   <div class="galeria-placeholder"></div>
 </ng-template>

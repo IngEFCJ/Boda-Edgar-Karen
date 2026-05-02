@@ -13,38 +13,38 @@
     "images/galeria/Foto2.jpeg",
     "images/galeria/Foto3.jpeg"
   ],
-    "itinerario": [
-      {
-        "label": "Recepción",
-        "icono": "images/itinerario/recepcion.png",
-        "hora": "14:00"
-      },
-      {
-        "label": "Ceremonia",
-        "icono": "images/itinerario/ceremonia.png",
-        "hora": "14:30"
-      },
-      {
-        "label": "Comida",
-        "icono": "images/itinerario/comida.png",
-        "hora": "15:30"
-      },
-      {
-        "label": "Brindis",
-        "icono": "images/itinerario/brindis.png",
-        "hora": "17:00"
-      },
-      {
-        "label": "Baile",
-        "icono": "images/itinerario/baile.png",
-        "hora": "18:00"
-      },
-      {
-        "label": "Despedida",
-        "icono": "images/itinerario/despedida.png",
-        "hora": "23:00"
-      }
-    ],
+  "itinerario": [
+    {
+      "label": "Ceremonia",
+      "icono": "images/itinerario/ceremonia.png",
+      "hora": "14:45"
+    },
+    {
+      "label": "Coktail",
+      "icono": "images/itinerario/brindis.png",
+      "hora": "17:00"
+    },
+    {
+      "label": "Recepción",
+      "icono": "images/itinerario/recepcion.png",
+      "hora": "18:00"
+    },
+    {
+      "label": "Comida",
+      "icono": "images/itinerario/comida.png",
+      "hora": "19:00"
+    },
+    {
+      "label": "Baile",
+      "icono": "images/itinerario/baile.png",
+      "hora": "20:00"
+    },
+    {
+      "label": "Despedida",
+      "icono": "images/itinerario/despedida.png",
+      "hora": "01:00"
+    }
+  ],
   "lugares": [
     {
       "titulo": "Parroquia San Juan Pablo II",

@@ -4,7 +4,7 @@
   max-width: 800px;
   margin: 2rem auto;
 }
-.timeline::before {
+/*.timeline::before {
   content: '';
   position: absolute;
   top: 0;
@@ -13,7 +13,13 @@
   transform: translateX(-50%);
   border-left: 2px dashed #000;
   background: none;
-}
+}*/
+
+  .timeline::before {
+    display: none;
+  }
+
+
 .event {
   position: relative;
   width: 50%;

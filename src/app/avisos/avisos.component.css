@@ -193,4 +193,43 @@
   .notice-description {
     max-width: 245px;
   }
+
+  .notice-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 4px;
+  }
+
+  .notice-link-button {
+    width: min(100%, 245px);
+    min-height: 42px;
+    padding: 10px 18px;
+    box-sizing: border-box;
+    border: 1px solid rgba(143, 118, 80, 0.58);
+    border-radius: 999px;
+    background: rgba(255, 252, 246, 0.72);
+    color: #6b583e;
+    font-family: 'Bookman Old Style', Georgia, serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(85, 70, 45, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  }
+
+    .notice-link-button:hover,
+    .notice-link-button:focus-visible {
+      background: #fffaf1;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(85, 70, 45, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+
 }

@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 
+type NoticeLink = {
+  text: string;
+  url: string;
+};
+
 type Notice = {
   title: string;
-  description: string;
+  description?: string;
   image?: string;
+  links?: NoticeLink[];
 };
 
 type VisibleNotice = Notice & {
@@ -22,16 +28,26 @@ export class AvisosComponent {
   notices: Notice[] = [
     {
       title: 'Vestimenta',
-      description: 'Azul marino o azul noche, verde esmeralda o botella, borgoña, vino o vinotinto.',
-      image: 'assets/invitaciones/karen-edgar/v1/images/logovestidotraje.png'
+      image: 'assets/invitaciones/karen-edgar/v1/images/logovestidotraje.png',
+      links: [
+        {
+          text: 'Dress Code Mujeres',
+          url: 'https://pin.it/5cw4ak6Ig'
+        },
+        {
+          text: 'Dress Code Hombres',
+          url: 'https://pin.it/39QQ9gSlU'
+        }
+      ]
     },
     {
       title: 'Evento libre de niños',
+      image: 'assets/invitaciones/karen-edgar/v1/images/evento-sin-ninos.png',
       description: 'Aunque amamos a sus pequeños, queremos evitar accidentes, hemos optado por una celebración solo para adultos.'
     },
     {
-      title: 'Otro aviso',
-      description: 'Texto del aviso.'
+      title: 'CONFIRMAR ASISTENCIA',
+      description: 'Favor de confirmar tu asistencia a la brevedad posible. En caso de no poder acompañarnos, te pedimos avisar con un máximo de 15 días de anticipación. Si no recibimos confirmación, entenderemos que no te será posible asistir de manera presencial. Agradecemos también tu puntualidad, ya que este evento ha sido organizado con mucho cariño y esfuerzo.'
     }
   ];
 

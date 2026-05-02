@@ -47,5 +47,22 @@ swiper-slide {
   mask-composite: add; /* suma las capas */
 }
 
+swiper-container::part(pagination) {
+  bottom: 12px;
+}
+
+swiper-container::part(bullet) {
+  width: 7px;
+  height: 7px;
+  background: rgba(107, 88, 62, 0.38);
+  opacity: 1;
+}
+
+swiper-container::part(bullet-active) {
+  width: 18px;
+  border-radius: 999px;
+  background: rgba(107, 88, 62, 0.85);
+  opacity: 1;
+}
 
 

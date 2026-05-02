@@ -45,9 +45,9 @@
 
 .countdown-number {
   color: #211f1b;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Candara Light', Candara, Calibri, Arial, sans-serif;
   font-size: clamp(1.7rem, 4vw, 3rem);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1;
 }
 

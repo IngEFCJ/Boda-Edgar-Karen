@@ -26,18 +26,26 @@ export class FamiliaComponent {
   godparentsGroups: FamilyGroup[] = [
     {
       title: 'Padrinos de Velación',
-      names: ['Rigoberto Romo Lopez ','Angeles Mora Sandoval']
-    },
-    {
-      title: 'Padrinos de Anillos',
-      names: ['Jorge Barba Vázquez , Ana Lilia Agripino Flores']
+      names: ['Rigoberto Romo Lopez ', 'Angeles Mora Sandoval']
     },
     {
       title: 'Padrinos de Lazo',
       names: ['Por confirmar']
     },
     {
+      title: 'Padrinos de Anillos',
+      names: ['Jorge Barba Vázquez', 'Ana Lilia Agripino Flores']
+    },
+    {
       title: 'Padrinos de Arras',
+      names: ['Ramiro De Jesus Guiterrez Piedra', 'Ana Carolina Alanis Chavez']
+    },
+    {
+      title: 'Padrinos de Biblia y Rosario',
+      names: ['Por confirmar']
+    },
+    {
+      title: 'Madrinas de Ramos',
       names: ['Por confirmar']
     }
   ];
