@@ -47,7 +47,7 @@ export class AvisosComponent {
     },
     {
       title: 'CONFIRMAR ASISTENCIA',
-      description: 'Favor de confirmar tu asistencia a la brevedad posible. En caso de no poder acompañarnos, te pedimos avisar con un máximo de 15 días de anticipación. Si no recibimos confirmación, entenderemos que no te será posible asistir de manera presencial. Agradecemos también tu puntualidad, ya que este evento ha sido organizado con mucho cariño y esfuerzo.'
+      description: 'Favor de confirmar tu asistencia a la brevedad posible, máximo con 30 días de anticipación. Si no recibimos confirmación, entenderemos que no te será posible asistir de manera presencial. Agradecemos también tu puntualidad, ya que este evento ha sido organizado con mucho cariño y esfuerzo.'
     }
   ];
 

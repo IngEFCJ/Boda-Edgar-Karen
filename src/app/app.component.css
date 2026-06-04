@@ -3,18 +3,16 @@ header {
 }
 
 .loading-section {
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
+  width: min(92%, 520px);
+  margin: 42px auto 58px;
+  padding: 30px 18px;
   display: grid;
   place-items: center;
-  padding: 24px;
-  background: rgba(255, 252, 246, 0.72);
-  backdrop-filter: blur(7px);
+  text-align: center;
 }
 
 .loading-card {
-  width: min(86vw, 300px);
+  width: min(100%, 300px);
   min-height: 250px;
   display: flex;
   flex-direction: column;
@@ -22,7 +20,6 @@ header {
   justify-content: center;
   gap: 18px;
   color: #2f2a24;
-  text-align: center;
 }
 
 .loading-title {

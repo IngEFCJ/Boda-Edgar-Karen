@@ -36,7 +36,9 @@
     </app-confirma-asistencia>
   </section>
 
-  <section *ngIf="token && loadingInvitation" class="loading-section">
+  <section id="cargando-invitacion"
+           *ngIf="token && loadingInvitation && !invitationData"
+           class="loading-section">
     <div class="loading-card" role="status" aria-live="polite">
       <div class="vintage-groom" aria-hidden="true">
         <span class="groom-head"></span>
@@ -47,9 +49,5 @@
       </div>
       <p class="loading-title">Cargando invitación...</p>
     </div>
-  </section>
-
-  <section *ngIf="token && invitationError" class="error-section">
-    <p class="pareja">{{ invitationError }}</p>
   </section>
 </div>

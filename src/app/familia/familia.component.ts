@@ -43,11 +43,11 @@ export class FamiliaComponent {
     },
     {
       title: 'Biblia y Rosario',
-      names: ['Por confirmar']
+      names: ['Fatima Montserrat Romo Correa' , 'Paola Itzel Romo Correa']
     },
     {
       title: 'Ramos',
-      names: ['Por confirmar']
+      names: ['Claudia Arias Perez' , 'Joselyne Aleman Escobar' , 'Perla Aguilar Armenta']
     }
   ];
 
