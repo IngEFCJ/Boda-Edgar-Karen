@@ -23,14 +23,40 @@
   }
   
   h2 {
-    font-size: 2rem;
-    font-family: 'Arial', sans-serif;
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
   }
   
   .description {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #555;
+    max-width: 34rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin: 10px auto;
+    color: #4d4439;
+  }
+
+  .bank-data {
+    margin-top: 12px;
+  }
+
+  .bank-data p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.08rem;
+    line-height: 1.45;
+    color: #3d372f;
+    margin: 4px 0;
+  }
+
+  .gift-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
   }
   
   button {
@@ -46,4 +72,12 @@
   
   button:hover {
     background-color: #e68a00;
+  }
+
+  .liverpool-button {
+    background-color: #f29ac2;
+  }
+
+  .liverpool-button:hover {
+    background-color: #e6007e;
   }

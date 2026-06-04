@@ -1,13 +1,6 @@
 {
   "hero": { "bg": "images/backgrounds/Fondo_Liso_Elegante_Minimalista.png" },
   "footer": { "logo": "images/logos/Foto2.jpeg" },
-  "itinerario": [
-    "images/itinerario/recepcion.png",
-    "images/itinerario/comida.png",
-    "images/itinerario/brindis.png",
-    "images/itinerario/baile.png",
-    "images/itinerario/despedida.png"
-  ],
   "galeria": [
     "images/galeria/Foto1.jpeg",
     "images/galeria/Foto2.jpeg",
@@ -20,7 +13,7 @@
       "hora": "14:45"
     },
     {
-      "label": "Coktail",
+      "label": "Cóctel",
       "icono": "images/itinerario/brindis.png",
       "hora": "17:00"
     },
@@ -61,18 +54,14 @@
   ],
   "mesaDeRegalos": {
     "titulo": "Mesa de Regalos",
-    "descripcion": "Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, nuestra mesa de regalos es ",
+    "descripcion": "Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, nuestra mesa de regalos es",
     "imagen": "images/mesa-de-regalos/MesaDeRegalos.png",
     "link": "https://www.amazon.com.mx/wedding/registry/29VZ6AKD82R3P"
   },
-
   "audio": { "track": "audio/Tu de que vas - Franco De Vita.mp3" },
   "textos": {
     "titulo": "Nuestra Boda",
-    "pareja": "Edgar & Karen",
+    "pareja": "Karen & Edgar",
     "fecha": "25/Octubre/2026 2:00pm"
   }
 }
-
-
-

@@ -27,11 +27,17 @@
 }
 .event.left {
   left: 0;
-  text-align: left;
+  text-align: center;
 }
 .event.right {
   left: 50%;
-  text-align: right;
+  text-align: center;
+}
+.event.left .text {
+  transform: translateX(16px);
+}
+.event.right .text {
+  transform: translateX(-16px);
 }
 .event .label {
   font-size: 1.5rem;
@@ -79,6 +85,14 @@
   }
   .event.right {
     justify-content: flex-start;
+  }
+
+  .event.left .text {
+    transform: translateX(10px);
+  }
+
+  .event.right .text {
+    transform: translateX(-10px);
   }
 
   /* 3) Etiqueta e imagen con márgenes mínimos */

@@ -1,12 +1,10 @@
-<!-- app.component.html -->
 <app-header></app-header>
 
 <div class="content">
-
   <app-home></app-home>
 
   <section id="nosotros">
-    <app-nosotros></app-nosotros> <!-- Nosotros con contador -->
+    <app-nosotros></app-nosotros>
   </section>
 
   <section id="galeria">
@@ -18,11 +16,11 @@
   </section>
 
   <section id="lugares">
-    <app-lugares></app-lugares> <!-- lugares -->
+    <app-lugares></app-lugares>
   </section>
 
   <section id="mesa-de-regalo">
-    <app-mesa-de-regalo></app-mesa-de-regalo> <!-- Mesa de Regalo -->
+    <app-mesa-de-regalo></app-mesa-de-regalo>
   </section>
 
   <section id="itinerario">
@@ -30,21 +28,28 @@
   </section>
 
   <section id="avisos">
-    <app-avisos></app-avisos> <!-- Avisos -->
+    <app-avisos></app-avisos>
   </section>
 
-  <!-- Sección de confirmación: solo si hay token válido -->
   <section id="confirma-asistencia" *ngIf="invitationData">
     <app-confirma-asistencia [data]="invitationData" [token]="token!" (invitationUpdated)="onInvitationUpdated()">
     </app-confirma-asistencia>
   </section>
 
-  <!-- Loading / Error si hay token pero aún no carga -->
   <section *ngIf="token && loadingInvitation" class="loading-section">
-    <p class="pareja">Cargando tu invitación...</p>
+    <div class="loading-card" role="status" aria-live="polite">
+      <div class="vintage-groom" aria-hidden="true">
+        <span class="groom-head"></span>
+        <span class="groom-body"></span>
+        <span class="groom-jacket left"></span>
+        <span class="groom-jacket right"></span>
+        <span class="groom-bow"></span>
+      </div>
+      <p class="loading-title">Cargando invitación...</p>
+    </div>
   </section>
+
   <section *ngIf="token && invitationError" class="error-section">
     <p class="pareja">{{ invitationError }}</p>
   </section>
-
 </div>

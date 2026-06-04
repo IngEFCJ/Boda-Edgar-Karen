@@ -7,7 +7,7 @@ import { AssetService } from '../services/asset.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  constructor(private assets: AssetService) { }
+  constructor(public assets: AssetService) { }
 
   /**
    * Opcional: si algún día el manifest trae una foto específica, se la pasas desde App:

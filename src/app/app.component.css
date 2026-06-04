@@ -1,3 +1,147 @@
 header {
-  background-color: #f0f0f0; /* Esto debería eliminarse */
+  background-color: #f0f0f0;
+}
+
+.loading-section {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(255, 252, 246, 0.72);
+  backdrop-filter: blur(7px);
+}
+
+.loading-card {
+  width: min(86vw, 300px);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #2f2a24;
+  text-align: center;
+}
+
+.loading-title {
+  margin: 0;
+  font-family: 'Bookman Old Style', Georgia, serif;
+  font-size: clamp(1.15rem, 5vw, 1.6rem);
+  line-height: 1.25;
+}
+
+.vintage-groom {
+  width: 118px;
+  height: 142px;
+  position: relative;
+  animation: groom-breathe 1.8s ease-in-out infinite;
+}
+
+.vintage-groom span {
+  position: absolute;
+  display: block;
+  background: #221f1b;
+}
+
+.groom-head {
+  width: 34px;
+  height: 34px;
+  left: 50%;
+  top: 0;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.groom-body {
+  width: 52px;
+  height: 82px;
+  left: 50%;
+  top: 38px;
+  border-radius: 24px 24px 9px 9px;
+  transform: translateX(-50%);
+}
+
+.groom-body::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 16px;
+  height: 54px;
+  background: rgba(255, 252, 246, 0.9);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  transform: translateX(-50%);
+}
+
+.groom-jacket {
+  width: 34px;
+  height: 72px;
+  top: 42px;
+  border-radius: 18px 18px 8px 8px;
+  transform-origin: top center;
+}
+
+.groom-jacket.left {
+  left: 16px;
+  transform: rotate(20deg);
+  animation: dress-left 1.8s ease-in-out infinite;
+}
+
+.groom-jacket.right {
+  right: 16px;
+  transform: rotate(-20deg);
+  animation: dress-right 1.8s ease-in-out infinite;
+}
+
+.groom-bow {
+  width: 30px;
+  height: 14px;
+  left: 50%;
+  top: 42px;
+  background: transparent !important;
+  transform: translateX(-50%) scale(0.8);
+  animation: bow-pop 1.8s ease-in-out infinite;
+}
+
+.groom-bow::before,
+.groom-bow::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 0;
+  background: #221f1b;
+  border-radius: 50% 8px 50% 8px;
+}
+
+.groom-bow::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.groom-bow::after {
+  right: 0;
+  transform: rotate(-135deg);
+}
+
+@keyframes groom-breathe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes dress-left {
+  0%, 100% { transform: rotate(30deg) translate(-8px, 4px); }
+  50% { transform: rotate(12deg) translate(2px, 0); }
+}
+
+@keyframes dress-right {
+  0%, 100% { transform: rotate(-30deg) translate(8px, 4px); }
+  50% { transform: rotate(-12deg) translate(-2px, 0); }
+}
+
+@keyframes bow-pop {
+  0%, 35% { opacity: 0.35; transform: translateX(-50%) scale(0.72); }
+  60%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
 }

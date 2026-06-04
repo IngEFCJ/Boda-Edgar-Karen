@@ -5,26 +5,47 @@
       <p id="family-title" class="fecha">Nuestros Padres</p>
       <div class="family-grid">
         <article class="family-card" *ngFor="let group of parentsGroups">
-            <h3 class="family-card-title">{{ group.title }}</h3>
-
-            <div class="family-card-names">
-            <p *ngFor="let name of group.names">{{ name }}</p>
-          </div>
-        </article>
-      </div>
-    </div>
-    <br />
-    <div>
-      <p class="fecha">Nuestros Padrinos</p>
-
-      <div class="family-grid">
-        <article class="family-card" *ngFor="let group of godparentsGroups">
           <h3 class="family-card-title">{{ group.title }}</h3>
 
           <div class="family-card-names">
             <p *ngFor="let name of group.names">{{ name }}</p>
           </div>
         </article>
+      </div>
+    </div>
+
+    <div class="godparents-section">
+      <p class="fecha">Nuestros Padrinos</p>
+
+      <div class="godparents-slider" aria-live="polite">
+        <button type="button"
+                class="godparent-arrow godparent-arrow-left"
+                aria-label="Ver padrino anterior"
+                (click)="previousGodparent()">
+          &#8249;
+        </button>
+
+        <article class="family-card godparent-card">
+          <h3 class="family-card-title">{{ selectedGodparent.title }}</h3>
+
+          <div class="family-card-names">
+            <p *ngFor="let name of selectedGodparent.names">{{ name }}</p>
+          </div>
+        </article>
+
+        <button type="button"
+                class="godparent-arrow godparent-arrow-right"
+                aria-label="Ver siguiente padrino"
+                (click)="nextGodparent()">
+          &#8250;
+        </button>
+      </div>
+
+      <div class="godparent-dots" aria-hidden="true">
+        <span *ngFor="let group of godparentsGroups; let i = index"
+              [class.active]="i === selectedGodparentIndex"
+              (click)="selectGodparent(i)">
+        </span>
       </div>
     </div>
   </div>

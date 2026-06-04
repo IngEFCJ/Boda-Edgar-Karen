@@ -35,9 +35,12 @@
   }
 
   .direccion p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0 0 8px 0;
+    max-width: 34rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #4d4439;
+    margin: 0 auto 8px;
   }
 
 button {

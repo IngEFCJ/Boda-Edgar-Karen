@@ -10,17 +10,27 @@
   </div>
 
   <div class="content">
-    <h2 class="lugar-imagen">{{ mesa.titulo }}</h2>
+    <h2>{{ mesa.titulo }}</h2>
     <p class="description">{{ mesa.descripcion }}</p>
-    <button type="button" (click)="irAMesaDeRegalos(mesa.link)">
-      Ver en Amazon
-    </button>
+    <div class="gift-buttons">
+      <button type="button" (click)="irAMesaDeRegalos(mesa.link)">
+        Ver en Amazon
+      </button>
+      <button type="button"
+              class="liverpool-button"
+              (click)="irAMesaDeRegalos('https://mesaderegalos.liverpool.com.mx/milistaderegalos/52001100')">
+        Ver en Liverpool
+      </button>
+    </div>
   </div>
+
   <div class="content">
-    <h2 class="lugar-imagen">Cuenta Bancaria</h2>
-    <p class="description">"Ayúdanos a llenar nuestra alcancía para tener nuestra luna de miel".</p>
-    <p class="description">"002320702122055650".</p>
-    <p class="description">"Banamex".</p>
-    <p class="description">"Edgar Francisco Cruz Jauregui".</p>
+    <h2>Cuenta Bancaria</h2>
+    <p class="description">Ayúdanos a llenar nuestra alcancía para tener nuestra luna de miel.</p>
+    <div class="bank-data">
+      <p>002320702122055650</p>
+      <p>Banamex</p>
+      <p>Edgar Francisco Cruz Jáuregui</p>
+    </div>
   </div>
 </div>
