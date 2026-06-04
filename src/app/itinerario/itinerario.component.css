@@ -4,113 +4,105 @@
   max-width: 800px;
   margin: 2rem auto;
 }
-/*.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 2px dashed #000;
-  background: none;
-}*/
 
-  .timeline::before {
-    display: none;
-  }
-
+.timeline::before {
+  display: none;
+}
 
 .event {
   position: relative;
   width: 50%;
   margin: 1.5rem 0;
 }
+
 .event.left {
   left: 0;
   text-align: center;
 }
+
 .event.right {
   left: 50%;
   text-align: center;
 }
+
 .event.left .text {
-  transform: translateX(76px);
+  transform: translateX(48px);
 }
+
 .event.right .text {
-  transform: translateX(-76px);
+  transform: translateX(-48px);
 }
+
 .event .label {
   font-size: 1.5rem;
   color: #333;
   margin-bottom: 0.5rem;
   background: transparent;
 }
+
 .event img {
   display: block;
   margin: 0 auto;
   width: 60px;
   height: auto;
 }
-.event.left::after {
-/*  content: '❤';
-*/  position: absolute;
+
+.event.left::after,
+.event.right::after {
+  position: absolute;
   top: 50%;
+  color: #e74c3c;
+  font-size: 20px;
+}
+
+.event.left::after {
   left: 100%;
   transform: translate(-50%, -50%);
-  color: #e74c3c;
-  font-size: 20px;
 }
+
 .event.right::after {
-/*  content: '❤';
-*/  position: absolute;
-  top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
-  color: #e74c3c;
-  font-size: 20px;
 }
+
 @media (max-width: 768px) {
-  /* 1) Cada evento ocupa 100% y es un flex container centrado */
+  .timeline {
+    width: calc(100% - 32px);
+    max-width: 430px;
+    margin: 1.75rem auto;
+  }
+
   .event {
-    position: relative;
     width: 100% !important;
     left: 0 !important;
     display: flex;
     align-items: center;
+    justify-content: center !important;
+    margin: 1.35rem auto;
   }
 
-  /* 2) Los de la izquierda van a la derecha del corazón, y viceversa */
-  .event.left {
-    justify-content: flex-end;
-  }
-  .event.right {
-    justify-content: flex-start;
-  }
-
-  .event.left .text {
-    transform: translateX(34px);
-  }
-
+  .event .text,
+  .event.left .text,
   .event.right .text {
-    transform: translateX(-34px);
+    width: min(74vw, 280px);
+    transform: none;
+    text-align: center;
   }
 
-  /* 3) Etiqueta e imagen con márgenes mínimos */
   .event .label {
-    order: 1;
-    margin: 0 0.5rem;
-    white-space: nowrap;
+    margin: 0 0 0.45rem;
+    white-space: normal;
     font-size: 1.2rem;
+    line-height: 1.25;
     color: #333;
   }
+
   .event img {
-    order: 2;
-    width: 40px;
+    width: 42px;
     height: auto;
-    margin: 0 0.5rem;
+    margin: 0 auto;
   }
 
-  /* 4) Siempre centro el corazón sobre la línea */
   .event::after {
     left: 50% !important;
     top: 50% !important;

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { retry, Subscription, timer } from 'rxjs';
 import { InvitationResponse } from './models/invitation.model';
 import { AssetService } from './services/asset.service';
 import { InvitationService } from './services/invitation.service';
@@ -14,7 +14,6 @@ export class AppComponent implements OnInit, OnDestroy {
   private manifestSub?: Subscription;
   private invitationSub?: Subscription;
   private routerSub?: Subscription;
-  private retryTimer?: ReturnType<typeof setTimeout>;
   private readonly retryDelayMs = 6000;
 
   manifest: any | null = null;
@@ -73,32 +72,35 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private fetchInvitation(token: string): void {
-    this.clearRetryTimer();
     this.invitationSub?.unsubscribe();
     this.loadingInvitation = true;
     this.invitationError = null;
 
-    this.invitationSub = this.invitationSvc.getByToken(token).subscribe({
+    this.invitationSub = this.invitationSvc.getByToken(token).pipe(
+      retry({
+        delay: (err) => {
+          console.error('Error backend, reintentando consulta de invitación:', err);
+          return timer(this.retryDelayMs);
+        }
+      })
+    ).subscribe({
       next: (data) => {
+        if (this.token !== token) return;
         this.invitationData = data;
         this.loadingInvitation = false;
         this.invitationError = null;
       },
       error: (err) => {
-        console.error('Error backend, reintentando consulta de invitación:', err);
+        console.error('Error backend:', err);
         this.invitationError = null;
         this.loadingInvitation = true;
-        this.retryTimer = setTimeout(() => {
-          if (this.token === token && !this.invitationData) {
-            this.fetchInvitation(token);
-          }
-        }, this.retryDelayMs);
       }
     });
   }
 
   onInvitationUpdated(): void {
     if (!this.token) return;
+
     this.invitationSvc.getByToken(this.token).subscribe({
       next: (data) => { this.invitationData = data; },
       error: () => { /* silenciar, ya tenemos los datos previos */ }
@@ -109,15 +111,7 @@ export class AppComponent implements OnInit, OnDestroy {
     return p ? this.assets.url(p) : '';
   }
 
-  private clearRetryTimer(): void {
-    if (this.retryTimer) {
-      clearTimeout(this.retryTimer);
-      this.retryTimer = undefined;
-    }
-  }
-
   ngOnDestroy(): void {
-    this.clearRetryTimer();
     this.manifestSub?.unsubscribe();
     this.invitationSub?.unsubscribe();
     this.routerSub?.unsubscribe();
