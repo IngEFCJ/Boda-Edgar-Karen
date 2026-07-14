@@ -17,7 +17,7 @@ export class HomeComponent {
   @Input() photo?: string;
 
   get heroSrc(): string {
-    const rel = this.photo && this.photo.trim().length ? this.photo : 'images/home/EdgarIncado.jpeg';
+    const rel = this.photo && this.photo.trim().length ? this.photo : 'images/home/EdgarIncado.jpg';
     return this.assets.url(rel); // resuelve /assets/invitaciones/<slug>/<v>/...
   }
 

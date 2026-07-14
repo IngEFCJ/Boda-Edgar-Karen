@@ -2,9 +2,11 @@
   "hero": { "bg": "images/backgrounds/Fondo_Liso_Elegante_Minimalista.png" },
   "footer": { "logo": "images/logos/Foto2.jpeg" },
   "galeria": [
-    "images/galeria/Foto1.jpeg",
-    "images/galeria/Foto2.jpeg",
-    "images/galeria/Foto3.jpeg"
+    "images/galeria/Foto1.jpg",
+    "images/galeria/Foto2.jpg",
+    "images/galeria/Foto3.jpg",
+    "images/galeria/Foto4.jpg",
+    "images/galeria/Foto5.jpg"
   ],
   "itinerario": [
     {
