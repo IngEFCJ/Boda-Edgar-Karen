@@ -1,0 +1,19 @@
+<section class="mosaic-gallery" aria-labelledby="mosaic-gallery-title">
+  <h2 id="mosaic-gallery-title" class="mosaic-title">Galería</h2>
+
+  <div class="mosaic-grid">
+    <figure class="mosaic-item reveal-on-scroll"
+            *ngFor="let photo of photos"
+            [ngClass]="photo.layout">
+      <img *ngIf="!photo.missing"
+           [src]="photoUrl(photo)"
+           [alt]="photo.label"
+           loading="lazy"
+           (error)="markMissing(photo)" />
+
+      <figcaption [class.placeholder]="photo.missing">
+        {{ photo.label }}
+      </figcaption>
+    </figure>
+  </div>
+</section>

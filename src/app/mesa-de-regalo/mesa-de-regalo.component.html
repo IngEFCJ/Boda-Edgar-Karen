@@ -1,17 +1,18 @@
 <div class="mesa-de-regalo-container" *ngIf="mesa$ | async as mesa">
-  <div class="image-container">
-    <img class="mesa-de-regalo-image"
-         [src]="assets.url(mesa.imagen)"
-         [alt]="mesa.titulo"
-         width="150"
-         height="150"
-         loading="lazy"
-         (error)="onImgError($event)" />
-  </div>
-
-  <div class="content">
-    <h2>{{ mesa.titulo }}</h2>
+  <section class="content gift-content" aria-labelledby="gift-title">
     <p class="description">{{ mesa.descripcion }}</p>
+    <h2 id="gift-title">{{ mesa.titulo }}</h2>
+
+    <div class="image-container">
+      <img class="mesa-de-regalo-image"
+           [src]="assets.url(mesa.imagen)"
+           [alt]="mesa.titulo"
+           width="150"
+           height="150"
+           loading="lazy"
+           (error)="onImgError($event)" />
+    </div>
+
     <div class="gift-buttons">
       <button type="button" (click)="irAMesaDeRegalos(mesa.link)">
         Ver en Amazon
@@ -22,15 +23,15 @@
         Ver en Liverpool
       </button>
     </div>
-  </div>
+  </section>
 
-  <div class="content">
-    <h2>Cuenta Bancaria</h2>
+  <section class="content bank-card" aria-labelledby="bank-title">
+    <h2 id="bank-title">Cuenta Bancaria</h2>
     <p class="description">Ayúdanos a llenar nuestra alcancía para tener nuestra luna de miel.</p>
     <div class="bank-data">
-      <p>002320702122055650</p>
+      <p class="bank-number">002320702122055650</p>
       <p>Banamex</p>
       <p>Edgar Francisco Cruz Jáuregui</p>
     </div>
-  </div>
+  </section>
 </div>

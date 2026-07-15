@@ -2,11 +2,7 @@
   "hero": { "bg": "images/backgrounds/Fondo_Liso_Elegante_Minimalista.png" },
   "footer": { "logo": "images/logos/Foto2.jpeg" },
   "galeria": [
-    "images/galeria/Foto1.jpg",
-    "images/galeria/Foto2.jpg",
-    "images/galeria/Foto3.jpg",
-    "images/galeria/Foto4.jpg",
-    "images/galeria/Foto5.jpg"
+    "images/galeria/Foto1.jpg"
   ],
   "itinerario": [
     {
@@ -15,24 +11,9 @@
       "hora": "14:45"
     },
     {
-      "label": "Cóctel",
-      "icono": "images/itinerario/brindis.png",
-      "hora": "17:00"
-    },
-    {
       "label": "Recepción",
-      "icono": "images/itinerario/recepcion.png",
-      "hora": "18:00"
-    },
-    {
-      "label": "Comida",
-      "icono": "images/itinerario/comida.png",
-      "hora": "19:00"
-    },
-    {
-      "label": "Baile",
-      "icono": "images/itinerario/baile.png",
-      "hora": "20:00"
+      "icono": "images/itinerario/brindis.png",
+      "hora": "16:45"
     },
     {
       "label": "Despedida",
@@ -56,7 +37,7 @@
   ],
   "mesaDeRegalos": {
     "titulo": "Mesa de Regalos",
-    "descripcion": "Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, nuestra mesa de regalos es",
+    "descripcion": "Tu presencia es nuestro mejor regalo. Si deseas obsequiarnos algo, con mucho cariño preparamos nuestra",
     "imagen": "images/mesa-de-regalos/MesaDeRegalos.png",
     "link": "https://www.amazon.com.mx/wedding/registry/29VZ6AKD82R3P"
   },

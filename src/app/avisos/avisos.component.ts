@@ -27,15 +27,16 @@ export class AvisosComponent {
 
   notices: Notice[] = [
     {
-      title: 'Vestimenta',
+      title: 'Código de vestimenta',
       image: 'assets/invitaciones/karen-edgar/v1/images/logovestidotraje.png',
+      description: 'Etiqueta/formal. Mujeres: vestido largo (evitar blanco y beige). Hombres: traje/smoking.',
       links: [
         {
-          text: 'Dress Code Mujeres',
+          text: 'Inspiración mujeres',
           url: 'https://pin.it/5cw4ak6Ig'
         },
         {
-          text: 'Dress Code Hombres',
+          text: 'Inspiración hombres',
           url: 'https://pin.it/39QQ9gSlU'
         }
       ]
@@ -43,10 +44,10 @@ export class AvisosComponent {
     {
       title: 'Evento libre de niños',
       image: 'assets/invitaciones/karen-edgar/v1/images/evento-sin-ninos.png',
-      description: 'Aunque amamos a sus pequeños, queremos evitar accidentes, hemos optado por una celebración solo para adultos.'
+      description: 'Aunque amamos a sus pequeños, queremos evitar accidentes; hemos optado por una celebración solo para adultos.'
     },
     {
-      title: 'CONFIRMAR ASISTENCIA',
+      title: 'Confirmar asistencia',
       description: 'Favor de confirmar tu asistencia a la brevedad posible, máximo con 30 días de anticipación. Si no recibimos confirmación, entenderemos que no te será posible asistir de manera presencial. Agradecemos también tu puntualidad, ya que este evento ha sido organizado con mucho cariño y esfuerzo.'
     }
   ];

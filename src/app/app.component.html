@@ -3,42 +3,46 @@
 <div class="content">
   <app-home></app-home>
 
-  <section id="nosotros">
+  <section id="nosotros" class="reveal-on-scroll">
     <app-nosotros></app-nosotros>
   </section>
 
-  <section id="galeria">
+  <section id="galeria" class="reveal-on-scroll">
     <app-galeria [imagenes]="manifest?.galeria"></app-galeria>
   </section>
 
-  <section id="familia">
+  <section id="familia" class="reveal-on-scroll">
     <app-familia></app-familia>
   </section>
 
-  <section id="lugares">
+  <section id="lugares" class="reveal-on-scroll">
     <app-lugares></app-lugares>
   </section>
 
-  <section id="mesa-de-regalo">
+  <section id="mesa-de-regalo" class="reveal-on-scroll">
     <app-mesa-de-regalo></app-mesa-de-regalo>
   </section>
 
-  <section id="itinerario">
+  <section id="itinerario" class="reveal-on-scroll">
     <app-itinerario [items]="manifest?.itinerario"></app-itinerario>
   </section>
 
-  <section id="avisos">
+  <section id="avisos" class="reveal-on-scroll">
     <app-avisos></app-avisos>
   </section>
 
-  <section id="confirma-asistencia" *ngIf="invitationData">
+  <section id="confirma-asistencia" class="reveal-on-scroll" *ngIf="invitationData">
     <app-confirma-asistencia [data]="invitationData" [token]="token!" (invitationUpdated)="onInvitationUpdated()">
     </app-confirma-asistencia>
   </section>
 
+  <section id="galeria-final" class="reveal-on-scroll">
+    <app-galeria-mosaico></app-galeria-mosaico>
+  </section>
+
   <section id="cargando-invitacion"
            *ngIf="token && loadingInvitation && !invitationData"
-           class="loading-section">
+           class="loading-section reveal-on-scroll">
     <div class="loading-card" role="status" aria-live="polite">
       <div class="vintage-groom" aria-hidden="true">
         <span class="groom-head"></span>

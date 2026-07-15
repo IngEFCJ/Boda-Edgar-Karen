@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { retry, Subscription, timer } from 'rxjs';
 import { InvitationResponse } from './models/invitation.model';
@@ -10,10 +10,13 @@ import { InvitationService } from './services/invitation.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
   private manifestSub?: Subscription;
   private invitationSub?: Subscription;
   private routerSub?: Subscription;
+  private revealObserver?: IntersectionObserver;
+  private revealMutationObserver?: MutationObserver;
+  private observedRevealElements = new WeakSet<Element>();
   private readonly retryDelayMs = 6000;
 
   manifest: any | null = null;
@@ -57,6 +60,49 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.routerSub = this.router.events.subscribe(() => {
       this.detectToken();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.setupRevealAnimation();
+  }
+
+  private setupRevealAnimation(): void {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    this.revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add('is-visible');
+        this.revealObserver?.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.14,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    this.observeRevealElements();
+
+    const content = document.querySelector('.content');
+    if (!content) return;
+
+    this.revealMutationObserver = new MutationObserver(() => this.observeRevealElements());
+    this.revealMutationObserver.observe(content, { childList: true, subtree: true });
+  }
+
+  private observeRevealElements(): void {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        if (this.observedRevealElements.has(el) || el.classList.contains('is-visible')) return;
+
+        el.classList.add('reveal-ready');
+        this.observedRevealElements.add(el);
+        this.revealObserver?.observe(el);
+      });
     });
   }
 
@@ -115,6 +161,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.manifestSub?.unsubscribe();
     this.invitationSub?.unsubscribe();
     this.routerSub?.unsubscribe();
+    this.revealObserver?.disconnect();
+    this.revealMutationObserver?.disconnect();
     document.documentElement.style.setProperty('--app-bg', 'none');
   }
 }

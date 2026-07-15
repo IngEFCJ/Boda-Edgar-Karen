@@ -26,14 +26,14 @@
 /* Overlay de textos (opcional) */
 .overlay {
   position: absolute;
-  inset: auto 0 18px 0;
+  inset: auto 0 6px 0;
   text-align: center;
   color: #2b2b2b;
   padding: 0 16px;
 }
 
 .monograma {
-  width: min(42vw, 190px);
+  width: min(35vw, 158px);
   height: auto;
   display: block;
   margin: 0 auto 4px;
@@ -62,7 +62,7 @@
 
 @media (min-width: 480px) {
   .overlay {
-    inset: auto 0 28px 0;
+    inset: auto 0 14px 0;
   }
 
   .pareja {

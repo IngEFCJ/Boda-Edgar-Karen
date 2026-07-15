@@ -73,7 +73,7 @@
         <button *ngIf="pendingTickets.length > 0" class="btn-primary" [disabled]="!hasSelectedTickets || confirming"
             (click)="confirmSelected()">
             <span *ngIf="!confirming">
-                <i class="fas fa-check"></i> Confirmar Seleccionados
+                <i class="fas fa-check"></i> Confirmar seleccionados
             </span>
             <span *ngIf="confirming">
                 <i class="fas fa-spinner fa-spin"></i> Confirmando...
@@ -82,9 +82,9 @@
 
         <!-- Botón Ver Boletos (habilitado si hay confirmados) -->
         <div class="view-tickets-area" *ngIf="canViewTickets">
-            <p class="celebration" *ngIf="allConfirmed">🎉 ¡Todos confirmados! 🎉</p>
+            <p class="celebration" *ngIf="allConfirmed">¡Todos confirmados!</p>
             <button class="btn-secondary" (click)="openTicketModal()">
-                <i class="fas fa-ticket-alt"></i> Ver Boletos
+                <i class="fas fa-ticket-alt"></i> Ver boletos
             </button>
         </div>
     </div>
@@ -98,7 +98,7 @@
             <i class="fas fa-times"></i>
         </button>
 
-        <h2 class="pareja">Tus Boletos</h2>
+        <h2 class="pareja">Tus boletos</h2>
 
         <!-- Loading -->
         <div class="qr-loading" *ngIf="loadingQrs">
